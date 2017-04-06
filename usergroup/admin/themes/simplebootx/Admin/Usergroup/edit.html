@@ -1,0 +1,162 @@
+<admintpl file="header" />
+<style>
+.form-horizontal .control-group{ background-color:#f8f8f8; height:40px; line-height:40px; padding:10px 0px; clear:both; margin:0px; border:#fff 1px solid;}
+.form-horizontal .control-label{color:#999; line-height:40px; height:40px;}
+.controls{ font-size:15px; line-height:40px;}
+.form-horizontal .form-actions{ text-align:center; padding-left:0px;}
+</style>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Applystatus/index')}" target="_self">申请数据管理</a></li>
+			<li class="active"><a href="javascript:;" >申请数据修改</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Applystatus/edit_post')}">
+			<fieldset>
+			<table align="center" width="100%" height="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td>
+				<div class="control-group">
+					<label class="control-label">学生姓名</label>
+					<div class="controls">
+						<input type="text" name="name" value="{$applystatus_data.name}" />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">负责老师</label>
+					<div class="controls">
+						<input type="text" name="teacher" value="{$applystatus_data.teacher}" />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">TeamLeader</label>
+					<div class="controls">
+						<select name="teamleader">
+							<option value="">--请选择--</option>
+							<foreach name="teamleaderArr" item="vo">
+								<option value="{$key}" <if condition="$applystatus_data.teamleader eq $key">selected</if>>{$vo}</option>
+							</foreach>
+						</select>
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">申请国家</label>
+					<div class="controls">
+						<input type="text" name="applycountry" value="{$applystatus_data.applycountry}" />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">申请类型</label>
+					<div class="controls">
+							<foreach name="applytype" item="vo">
+								<input type="radio" name="applytype" value="{$key}" <if condition="$applystatus_data.applytype eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">院校</label>
+					<div class="controls">
+						<input type="text" name="school" value="{$applystatus_data.school}" />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">课程</label>
+					<div class="controls">
+						<input type="text" name="course" value="{$applystatus_data.course}" />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">PS状态</label>
+					<div class="controls">
+							<foreach name="done_edit" item="vo">
+								<input type="radio" name="psstatus" value="{$key}" <if condition="$applystatus_data.psstatus eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+					</td>
+					<td>
+				<div class="control-group">
+					<label class="control-label">推荐信状态</label>
+					<div class="controls">
+							<foreach name="done_edit" item="vo">
+									<input type="radio" name="recommendstatus" value="{$key}" <if condition="$applystatus_data.recommendstatus eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Essay状态</label>
+					<div class="controls">
+							<foreach name="done_edit" item="vo">
+								<input type="radio" name="essaystatus" value="{$key}" <if condition="$applystatus_data.essaystatus eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">高中平日成绩</label>
+					<div class="controls">
+							<foreach name="submit_no" item="vo">
+								<input type="radio" name="highschoolscore" value="{$key}" <if condition="$applystatus_data.highschoolscore eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Alevel成绩单</label>
+					<div class="controls">
+							<foreach name="submit_no2" item="vo">
+									<input type="radio" name="alevelscore" value="{$key}" <if condition="$applystatus_data.alevelscore eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Alevel证书</label>
+					<div class="controls">
+							<foreach name="submit_no2" item="vo">
+								<input type="radio" name="alevelbook" value="{$key}" <if condition="$applystatus_data.alevelbook eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">语言成绩</label>
+					<div class="controls">
+							<foreach name="lanscore" item="vo">
+								<input type="radio" name="lanscore" value="{$key}" <if condition="$applystatus_data.lanscore eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">申请状态</label>
+					<div class="controls">
+							<foreach name="applystatus" item="vo">
+								<input type="radio" name="applystatus" value="{$key}" <if condition="$applystatus_data.applystatus eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">签证资料</label>
+					<div class="controls">
+							<foreach name="visadata" item="vo">
+								<input type="radio" name="visadata" value="{$key}" <if condition="$applystatus_data.visadata eq $key">checked</if> />&nbsp;{$vo}&nbsp;&nbsp;&nbsp;&nbsp;
+							</foreach>
+					</div>
+				</div>
+					</td>
+				</tr>
+			</table>
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$applystatus_data.id}" />
+				<button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+				<a class="btn" href="{:U('Applystatus/index')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+</body>
+</html>

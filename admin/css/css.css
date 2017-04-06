@@ -1,0 +1,85 @@
+/* CSS Document */
+*{ padding:0; margin:0;}
+body{ font-family:"微软雅黑"; font-size:14px;  behavior:url("csshover.htc");}
+img{ border:none;}
+a{ text-decoration:none; outline:none;}
+li{ list-style:none;}
+/*===index_box===*/
+.index{ background:#0683b1;}
+h1.logo{ width:279px; height:73px; margin:0 auto; padding:128px 0 46px;}
+.index_box{ width:494px; height:293px; background:url(../images/dl_bg.jpg) no-repeat 0 0; margin:0 auto; padding-left:65px; padding-top:44px;}
+.index_box input{ display:block; width:413px; height:52px; line-height:52px; margin-bottom:18px; display:inline; background:url(../images/input_bg.jpg) no-repeat left top; border:none; font-size:16px; font-family:"微软雅黑"; color:#555656;}
+.index_box input.ys1,.index_box input.ys2{ padding-left:68px; width:345px;}
+.index_box input.ys1{ background:url(../images/name.jpg) no-repeat 0 0;}
+.index_box input.ys2{ background:url(../images/Cipher.jpg) no-repeat 0 0;}
+.index_box input.ys3{ width:176px; margin-bottom:28px; padding-left:20px; float:left;}
+.index_box span.yzm{ display:block; height:52px; width:100px; background:url(../images/yzm.jpg) no-repeat center; float:left; margin-left:30px; display:inline;}
+.index_box p{ clear:both; display:block; overflow:hidden;}
+.index_box input.ys4{ clear:both; width:162px; height:45px; line-height:45px; background:#0683b1; color:#fff;}
+.index_box input.ys4:hover{ cursor:pointer;}
+/*===jxgl===*/
+.header{ height:65px; margin:0 auto; background:#0683b1; width:100%;min-width:1024px;}
+.header .logo{ display:block; width:220px; height:auto; margin:13px 100px 0 0px; display:inline; float:left;}
+.header ul{ float:left; width:700px; height:65px;}
+.header ul li{ float:left; height:65px; margin-right:16px; display:inline;
+line-height: 65px;
+color: #FFF;
+padding: 0px 4px;cursor:pointer;}
+.header ul li:hover{ background: rgba(0, 0, 0, 0) url("../images/nav_bg.jpg") no-repeat scroll center bottom;}
+.header ul li a{ display:block; float:left; height:65px; line-height:65px; color:#fff; padding:0 4px;}
+.header ul li a:hover{ background:url(../images/nav_bg.jpg) no-repeat center bottom;}
+.header p a{ display:block; float:left; color:#fff;}
+.header p{ float:right; padding:26px 22px 0 20px; width:200px; background:url(../images/admin.jpg) no-repeat 0 28px;}
+.header p a.name{ padding-right:18px; background:url(../images/admin_bg.jpg) no-repeat right 8px; font-size:12px; margin-right:18px; display:inline;}
+<!--.content{ width:1300px; margin:0 auto;}-->
+/*===jx_left===*/
+.jx_left{ width:178px; height:790px; background:url(../images/left_bg.jpg) #f4f8f9 repeat-y right top; float:left;}
+.jx_left dt{ height:62px; line-height:62px; font-size:20px; color:#8cba51; background:url(../images/left_bg_1.jpg) #fff repeat-y right top;}
+.jx_left dt span{ display:block; float:left; width:30px; height:30px; margin:16px 13px 0 20px; display:inline; background:url(../images/ico.png) no-repeat -57px -14px;}
+.jx_left dd{ clear:both; padding-left:4px;}
+.jx_left dd a{ display:block; height:40px; line-height:40px; color:#000; font-size:12px;}
+.jx_left dd a span{ display:block; float:left; width:16px; height:16px; margin:13px 14px 0 28px;}
+.jx_left dd.ys1 a span{ background:url(../images/ico.png) no-repeat -5px -21px;}
+.jx_left dd.ys2 a span{ background:url(../images/ico.png) no-repeat -5px -64px;}
+.jx_left dd.ys3 a span{ background:url(../images/ico.png) no-repeat -5px -102px;}
+.jx_left dd.ys4 a span{ background:url(../images/ico.png) no-repeat -5px -143px;}
+.jx_left dd.ys5 a span{ background:url(../images/ico.png) no-repeat -5px -181px;}
+.jx_left dd.ys6 a span{ background:url(../images/ico.png) no-repeat -5px -221px;}
+.jx_left dd.ys7 a span{ background:url(../images/ico.png) no-repeat -5px -261px;}
+.jx_left dd a:hover{ color:#34acd8; background:#fff;}
+.jx_left dd.ys1 a:hover span{ background:url(../images/ico.png) no-repeat -32px -21px;}
+.jx_left dd.ys2 a:hover span{ background:url(../images/ico.png) no-repeat -32px -64px;}
+.jx_left dd.ys3 a:hover span{ background:url(../images/ico.png) no-repeat -32px -102px;}
+.jx_left dd.ys4 a:hover span{ background:url(../images/ico.png) no-repeat -32px -143px;}
+.jx_left dd.ys5 a:hover span{ background:url(../images/ico.png) no-repeat -32px -181px;}
+.jx_left dd.ys6 a:hover span{ background:url(../images/ico.png) no-repeat -32px -221px;}
+.jx_left dd.ys7 a:hover span{ background:url(../images/ico.png) no-repeat -32px -261px;}
+.jx_right{ padding-left:22px; float:left;}
+.jx_right h3{  font-weight:normal; font-size:18px; height:34px; padding:28px 0 0; border-bottom:1px solid #e5e8ea; margin-bottom:22px;}
+.jx_right h3 span{ display:block; height:31px; float:left; border-bottom:4px solid #8cba51;}
+.jx_right dl{ width:1100px;}
+.jx_right dl span{ display:block; float:left;}
+.jx_right dl dt{ clear:both; font-weight:bold; height:40px; line-height:40px; background:#eff1f1; border-top:2px solid #34acd8; font-size:12px;}
+.jx_right dl dd{ clear:both; height:40px; line-height:40px; border-bottom:1px solid #eee; color:#818181;}
+.jx_right dl span.y1{ width:87px; padding-left:22px;}
+.jx_right dl span.y2{ width:106px;}
+.jx_right dl span.y3{ width:92px;}
+.jx_right dl span.y4{ width:118px;}
+.jx_right dl span.y5{ width:182px;}
+.jx_right dl span.y6{ width:119px;}
+.jx_right dl span.y7{ width:124px;}
+.jx_right dl span.y8{ width:97px;}
+.jx_right dl span.y9{ width:100px; padding-left:46px; text-align:center;}
+.jx_right dl span.y9 a{ color:#0683b1; padding:0 6px;}
+.jx_right dl span.y9 a:hover{ text-decoration:underline;}
+.jx_right .page{ padding-top:18px;}
+.jx_right .page a{ display:block; float:left; width:25px; line-height:25px; text-align:center; color:#9d9d9d; border:1px solid #c3c3c3; margin-right:6px; display:inline;}
+.jx_right .page a:hover{ color:#fff; border-color:#0683b1; background:#0683b1;}
+
+.jx_right .page a.up{ border:1px solid #d5d5d5; height:25px; background:url(../images/page_1.jpg) no-repeat;}
+.jx_right .page a.down{ border:1px solid #d5d5d5; height:25px; background:url(../images/page_2.jpg) no-repeat;}
+.jx_right .page a.up:hover{ border:1px solid #0683b1; height:25px; background:url(../images/page_b.jpg) no-repeat;}
+.jx_right .page a.down:hover{border:1px solid #0683b1; height:25px; background:url(../images/page_a.jpg) no-repeat;}
+.bg_image_onclick {
+	background: rgba(0, 0, 0, 0) url("../images/nav_bg.jpg") no-repeat scroll center bottom;
+}

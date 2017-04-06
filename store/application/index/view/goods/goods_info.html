@@ -1,0 +1,154 @@
+{include file="public/header" /}
+<!-- 上传插件 webuploader -->
+<link type="text/css" rel="stylesheet" href="/static/plugins/webuploader/webuploader.css">
+<link type="text/css" rel="stylesheet" href="/static/plugins/webuploader/image-upload/style.css" />
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5> 商品添加</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form action="<?php echo url( 'Goods/goods_operation' ); ?>" id="goods_form" method="post" class="form-horizontal">
+                        <input type="hidden" name="goods_id" value="{$goods_info.goods_id}"/>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> *商品名称 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" id="goods_name" name="goods_name" value="{$goods_info.goods_name}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品条形码 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" name="goods_sn" value="{$goods_info.goods_sn}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品编号 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="goods_bianhao" class="form-control"  value="{$goods_info.goods_bianhao}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 短描述 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="sort_desc" class="form-control" value="{$goods_info.sort_desc}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品单位 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="goods_unit" class="form-control" value="{$goods_info.goods_unit}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品重量 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="goods_weight" class="form-control" value="{$goods_info.goods_weight}" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品库存数量 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="goods_number" class="form-control" value="{$goods_info.goods_number}" onkeyup="value=value.replace(/[^\d]/g,'');"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 库存警告数量 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="warn_number" class="form-control" value="{$goods_info.warn_number}" onkeyup="value=value.replace(/[^\d]/g,'');"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 采购价 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="market_price" class="form-control" value="{$goods_info.market_price}" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 原始价 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="shop_price" class="form-control" value="{$goods_info.shop_price}" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 折扣价 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="pifa_price" class="form-control" value="{$goods_info.pifa_price}" onkeyup="value=value.replace(/[^\d.]/g,'')"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商品主图 </label>
+                                <input type="hidden" id="goods_main" name="goods_main" value="{$goods_info['original_img']}" />
+                                <div class="col-sm-2">
+                                    <div>
+                                        <div id="logoList_main" class="uploader-list">
+                                            <div class="file-item thumbnail upload-state-done">
+                                            <img src="<?php echo pic_url( $goods_info['original_img'] ); ?>" width='100' height='100'>
+                                            </div>
+                                        </div>
+                                        <div id="logoPicker_main">选择图片</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 产品详情 </label>
+                                <div class="col-sm-10">
+                                    <script type="text/plain" id="editor" name="goods_desc" style="height:400px;">{$goods_info.goods_desc}</script>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> Meta关键字 </label>
+                                <div class="col-sm-4">
+                                    <input type="text" id="meta_keys" name="meta_keys" class="form-control" value="{$goods_info.meta_keys}" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> Meta描述 </label>
+                                <div class="col-sm-4">
+                                    <input type="text" id="meta_desc" name="meta_desc" class="form-control" value="{$goods_info.meta_desc}" />
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="button" onclick="check_form()">保存内容</button>
+                                    <!-- <button class="btn btn-white" type="submit">取消</button> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    function check_form(){
+        var goods_name = $('#goods_name').val();
+        if( goods_name == '' ){ 
+            alert( '商品名称不能为空' );return false;
+        }
+        $('#goods_form').submit();
+    }
+</script>
+<script type="text/javascript">
+    var main_server = '{:url('Upload/goods_main')}';
+    var upload_swf  = '/static/plugins/webuploader/Uploader.swf';
+</script>
+<script type="text/javascript" src="/static/plugins/webuploader/webuploader.js"></script>
+<script type="text/javascript" src="/static/plugins/webuploader/image-upload/goodsmain.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<!-- Page Script -->
+<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/ueditor.all.min.js"> </script>
+<script type="text/javascript" charset="utf-8" src="/static/plugins/ueditor/lang/zh-cn/zh-cn.js"></script>
+<link type="text/css" rel="stylesheet" href="/static/plugins/ueditor/themes/default/css/ueditor.css" />
+<script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+</script>
+</body>
+</html>

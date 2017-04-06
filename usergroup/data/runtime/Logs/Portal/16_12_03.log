@@ -1,0 +1,240 @@
+[ 2016-12-03T17:35:45+08:00 ] 101.226.65.104 /usergroup/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0156s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.296881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.296881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:16:09+08:00 ] 140.207.63.103 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.031250s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.031250s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.218754s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.218754s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:16:25+08:00 ] 101.226.89.122 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015626s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.078127s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.078127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015625s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-12-03T22:16:27+08:00 ] 180.153.81.203 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015626s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015626s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093752s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:27:44+08:00 ] 140.207.63.103 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.015626s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015626s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062501s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062501s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:27:47+08:00 ] 140.207.63.103 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:28:23+08:00 ] 140.207.63.103 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-12-03T22:28:27+08:00 ] 140.207.63.103 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

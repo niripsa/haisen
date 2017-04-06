@@ -1,0 +1,126 @@
+<admintpl file="header" />
+<style>
+.well{ margin:0px; padding:3px 0px;}
+.search{
+    width:100%; height:auto; overflow:hidden; margin:0px; padding:0px; list-style:none;}
+.search li{ width:25%; float:left; height:40px; padding:3px 0px; margin:0px; line-height:40px;}
+.search li label{ display:inline-block; float:left; width:100px; line-height:40px; text-align:right; padding-right:10px;}
+.sch02{ width:150px; float:left;}
+</style>
+</head>
+<body>
+    <div class="wrap js-check-wrap">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="javascript:;">用户关系</a></li>
+        </ul>
+        <if condition="$my_uid eq ''">
+        <form class="well form-search" method="post" action="{:U('Usergroup/index')}">
+        <ul class="search">        
+          <li><label>关键字：</label> 
+            <input type="text" name="key" class="sch02" value="{$key}" placeholder="请输入关键字..."></li>
+    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-primary" name="submit" value="搜索" /></li>          
+        </ul></form></if>
+        <form class="js-ajax-form" action="" method="post">
+            <table class="table table-hover table-bordered table-list">
+                <thead>
+                    <tr>                        
+                        <th width="150">昵称</th>
+                        <th width="60">佣金</th>
+                        <th width="50">代理数</th>
+                        <th width="50">购买单数</th>
+                        <th width="50">上月购买单数</th>
+                        <th width="60">是否关注</th>
+                        <th width="60">加入时间</th>
+                        <th width="70">操作</th>
+                    </tr>
+                </thead>
+                <foreach name="lists" item="vo">
+                <tr>                    
+                    <td>
+                    <if condition="$vo.zcount gt 0">
+                        <a href='{:U("Usergroup/index_own",array("uid"=>$vo["uid"]))}'><if condition="$vo.nickname neq ''">{$vo.nickname}<else/>未关注</if>(<font color="red">{$vo.zcount}</font>)</a>
+                    <else/>
+                        <if condition="$vo.nickname neq ''">{$vo.nickname}<else/>未关注</if>(<font color="red">0</font>)
+                    </if>
+                    </td>
+                    <td>￥
+                    <if condition="$vo.money_ucount eq ''">
+                    0.00
+                    <else/>
+                    {$vo.money_ucount}
+                    </if>
+                    </td>
+                    <td>0</td>
+                    <td>{$vo.allnum}</td>
+                    <td>{$vo.lastnum}</td>
+                    <td>
+                        <if condition="$vo.is_subscribe eq 1">
+                        是
+                        <else/>
+                        否
+                        </if>
+                    </td>
+                    <td>
+                    {$vo.subscribe_time_data}
+                    </td>
+                    <td>
+                    <if condition="$my_uid neq $vo['uid'] && $isadd eq 1">
+                    <if condition="$vo.isopen gt 0">
+                        <a href="{:U('User/edit',array('uid'=>$vo['uid']))}">修改登录权限</a>
+                    <else/>
+                        <a href="{:U('User/add',array('uid'=>$vo['uid']))}">开通登录权限</a>
+                    </if>
+                    </if>
+                    </td>
+                </tr>
+                </foreach>
+            </table>
+            <div class="pagination">{$page}</div>
+        </form>
+    </div>
+    <script src="__PUBLIC__/js/common.js"></script>
+    <script>
+        function refersh_window() {
+            var refersh_time = getCookie('refersh_time');
+            if (refersh_time == 1) {
+                window.location = "{:U('Applystatus/index',$formget)}";
+            }
+        }
+        setInterval(function() {
+            refersh_window();
+        }, 2000);
+        $(function() {
+            setCookie("refersh_time", 0);
+            Wind.use('ajaxForm', 'artDialog', 'iframeTools', function() {
+                //批量移动
+                $('.js-articles-move').click(function(e) {
+                    var str = 0;
+                    var id = tag = '';
+                    $("input[name='ids[]']").each(function() {
+                        if ($(this).attr('checked')) {
+                            str = 1;
+                            id += tag + $(this).val();
+                            tag = ',';
+                        }
+                    });
+                    if (str == 0) {
+                        art.dialog.through({
+                            id : 'error',
+                            icon : 'error',
+                            content : '您没有勾选信息，无法进行操作！',
+                            cancelVal : '关闭',
+                            cancel : true
+                        });
+                        return false;
+                    }
+                    var $this = $(this);
+                    art.dialog.open("__ROOT__/index.php?g=portal&m=AdminPost&a=move&ids="+ id, {
+                        title : "批量移动",
+                        width : "80%"
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+[ 2016-08-23T02:02:05+08:00 ] 121.42.0.84 /usergroup/index.php?g=%24%7B%40print%28md5%28233333%29%29%7D&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+ERR: 无法加载模块:${@print(md5(233333))}
+
+[ 2016-08-23T02:03:51+08:00 ] 121.42.0.84 /usergroup/index.php?g=%24%7B%40print%28md5%28233333%29%29%7D%5C&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:${@print(md5(233333))}\
+
+[ 2016-08-23T02:04:02+08:00 ] 121.42.0.84 /usergroup/index.php?g=print%28md5%28233333%29%29%3Bdie%28%29%3B%2F*&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Print(md5(233333));die();/*
+
+[ 2016-08-23T02:04:36+08:00 ] 121.42.0.84 /usergroup/index.php?g=$%7B7387324923%2b57832091%7D&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:${7387324923+57832091}
+
+[ 2016-08-23T02:04:47+08:00 ] 121.42.0.84 /usergroup/index.php?g=$%7Bnew%20java.lang.String(new%20byte%5B%5D%7B97,98,99,100,101,102,120,97,120,102,101,100,99,98,97%7D)%7D&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:${new java.lang.String(new byte[]{97,98,99,100,101,102,120,97,120,102,101,100,99,98,97})}
+
+[ 2016-08-23T02:04:57+08:00 ] 121.42.0.84 /usergroup/index.php?g=$%7Bnew%20java.net.URLClassLoader(new%20java.net.URL%5B%5D%7B%7D).loadClass(new%20java.lang.String(new%20byte%5B%5D%7B111,114,103,46,97,112,97,99,104,101,46,99,111,109,109,111,110,115,46,105,111,46,73,79,85,116,105,108,115%7D)).toString(new%20byte%5B%5D%7B35,121,100,118,117,108,116,116,116,35%7D)%7D&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:${new java.net.URLClassLoader(new java.net.URL[]{}).loadClass(new java.lang.String(new byte[]{111,114,103,46,97,112,97,99,104,101,46,99,111,109,109,111,110,115,46,105,111,46,73,79,85,116,105,108,115})).toString(new byte[]{35,121,100,118,117,108,116,116,116,35})}
+
+[ 2016-08-23T02:07:38+08:00 ] 121.42.0.57 /usergroup/index.php?g=Admin'%22%3E%3Ciframe%20onload=alert()%3E&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2016-08-23T02:07:46+08:00 ] 121.42.0.65 /usergroup/index.php?g=Admin'%22%3E%3Cimg%20src=x%20onerror=prompt()%3E&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2016-08-23T02:07:58+08:00 ] 121.42.0.67 /usergroup/index.php?g=Admin'%22%3E%3Csvg%20onload=prompt()%3E&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Admin'">
+
+[ 2016-08-23T02:08:04+08:00 ] 121.42.0.84 /usergroup/index.php?g=Admini1239161i&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:Admini1239161i
+
+[ 2016-08-23T02:08:29+08:00 ] 121.42.0.84 /usergroup/index.php?g=PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:PHNjcmlwdD5hbGVydCgxKTwvc2NyaXB0Pg==
+
+[ 2016-08-23T02:08:41+08:00 ] 121.42.0.84 /usergroup/index.php?g=amF2YXNjcmlwdDpwcm9tcHQoMTExKTt4&m=Usergroup&a=index&menuid=176&p=3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:AmF2YXNjcmlwdDpwcm9tcHQoMTExKTt4
+

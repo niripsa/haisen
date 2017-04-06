@@ -1,0 +1,178 @@
+{include file="public/header" /}
+<body class="gray-bg">
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="ibox-title">
+          <h5> 商品列表</h5>
+      </div>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <div class="pull-left" style=" padding-left: 20px;">
+              <select class="form-control input-sm setStatus" name="status">
+                <option value="0">批量操作</option>
+                <option value="1">上架商品</option>
+                <option value="2">下架商品</option>
+                <option value="delete">删除商品</option>
+              </select>
+              </div>
+              <div class="pull-left" style="margin-left:10px;"> 
+                <button type="button" class="btn btn-block btn-default btn-sm setStatusSubmit">应用</button>
+              </div>
+              <div class="pull-left" style="margin-left:15px;">
+              <select class="form-control input-sm filterStatus" name="status">
+                <option value="0" <?php if( $status == '0' ) echo "selected"; ?> >所选状态</option>
+                <option value="1" <?php if( $status == '1' ) echo "selected"; ?> >上架商品</option>
+                <option value="2" <?php if( $status == '2' ) echo "selected"; ?> >下架商品</option>
+              </select>
+              </div>
+              <div class="pull-left" style="margin-left:10px;"> 
+                <button type="button" class="btn btn-block btn-default btn-sm filter">筛选</button>
+              </div>
+<!--               <div class="pull-left" style="margin-left:15px;">
+                <a href="{:url('goodsAdd')}" class="btn btn-block btn-primary btn-sm">添加商品</a>
+              </div> -->
+              <div class="box-tools pull-right" style=" padding-right: 20px;">
+                <div class="has-feedback">
+                  <input class="form-control input-sm search" value="<?php echo $goods_name;?>" placeholder="搜索商品名称(回车搜索)" type="text">
+                  <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+              </div>
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <div class="mailbox-messages">
+                <table class="table table-hover table-striped">
+                  <thead>
+                  <tr>
+                    <th style=" width:80px; text-align: center;"><input type="checkbox" class="selectAll"></th>
+                    <th>商品图</th>
+                    <th>标题</th>
+                    <th>采购价</th>
+                    <th>市场价</th>
+                    <th>折扣价</th>
+                    <th>日期</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {volist name='goodsList' id='vo'}
+                    <tr>
+                      <td style=" width:80px; text-align: center;"><input name="ids" class="postCheck" value="{$vo.goods_id}" type="checkbox"></td>
+                      <td><img src="<?php echo pic_url( $vo['goods_img'] ); ?>" width='100' height='80'></td>
+                      <td>{$vo.goods_name}</td>
+                      <td>{$vo.market_price}</td>
+                      <td>{$vo.shop_price}</td>
+                      <td>{$vo.pifa_price}</td>
+                      <td>{$vo.add_time|date='Y-m-d H:i:s',###}</td>
+                      <td>
+                        {eq name="vo.is_on_sale" value="1"}
+                        已上架
+                        {else/}
+                        已下架
+                        {/eq}
+                      </td>
+                      <td>
+                          <a type="button" class="btn btn-sm btn-success ajax-get" href="{:url('goods_info',['ids'=>$vo.goods_id])}">编辑</a>
+                          &nbsp;&nbsp;
+                          <a type="button" class="btn btn-sm btn-danger ajax-get confirm" href="{:url('set_goods_state',['status'=>'delete', 'ids'=>$vo.goods_id, 'flag'=>'1'])}">删除</a>
+                      </td>
+                    </tr>
+                  {/volist}
+                  </tbody>
+                </table>
+                <!-- /.table -->
+              </div>
+              <!-- /.mail-box-messages -->
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer with-border">
+              <div class="pull-right" style=" padding-right: 20px;">
+              {$goodsList->render()}
+              </div>
+              <!-- /.box-tools -->
+            </div>
+          </div>
+          <!-- /. box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+</body>
+<script src="/static/js/jquery.min.js"></script>
+<script src="/static/plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<script type="text/javascript">
+  $('document').ready(function (argument) {
+    // 全选、取消全选的事件
+    $("th .selectAll").click(function () {
+      if(this.checked){  
+       $(".postCheck").each(function(){this.checked=true;});
+      }else{  
+       $(".postCheck").each(function(){this.checked=false;});  
+      }
+    });
+    // 筛选方法
+    $('.filter').click(function (event) {
+        getUrl = '{:url('goods_list',['status'=>'filterStatus'])}';
+        getUrl = getUrl.replace("filterStatus", $('.filterStatus').val());
+        location.href = getUrl;
+    });
+    // 搜索方法
+    $('.search').keyup(function (event) {
+      if (event.keyCode == "13") {
+          getUrl = '{:url('goods_list',['q'=>'qstring'])}';
+          location.href = getUrl.replace("qstring", $('.search').val());
+      }
+    });
+    // 设置状态方法
+    $('.setStatusSubmit').click(function () {
+      setStatus = $(this).parent().parent().children().children('.setStatus').val();
+      var ids = new Array();//声明一个存放id的数组 
+      $("[name='ids']:checked").each(function(){
+        ids.push($(this).val());
+      });
+      $.ajax({
+        cache: true,
+        type: "POST",
+        url : '{:url('Goods/set_goods_state')}',
+        data: {status:setStatus,ids:ids},
+        async: false,
+          success: function(data) {
+            console.log( data );
+            if (data.code) {
+                alert(data.msg);
+                setTimeout(function () {
+                  location.href = "<?php echo url( 'Goods/goods_list' ); ?>";
+                }, 1000);
+            } else {
+                alert(data.msg);
+            }
+
+          },
+          error: function(request) {
+          alert("请勾选需要操作的商品");
+          }
+      });
+    });
+    // select选中
+    $(".filterStatus").val("{$status ?? '0'}");
+    $(".filterCategory").val("{$category ?? '0'}");
+
+  });
+</script>
+</html>

@@ -1,0 +1,14 @@
+
+
+h1.logo{width:400px; height:73px; margin:0 auto; padding:18px 0 46px;}
+.index_box{width:494px;height:293px;background:url(./././images/img/dl_bg.jpg) no-repeat 0 0; margin:0 auto; padding-left:65px; padding-top:44px;position:relative}
+.index_box input{ display:block; width:413px; height:52px; line-height:52px; margin-bottom:18px; display:inline; background:url(./././images/img/input_bg.jpg) no-repeat left top; border:none; font-size:16px; font-family:"微软雅黑"; color:#555656;}
+.index_box input.uname,.index_box input.pass{ padding-left:68px; width:345px;}
+.index_box input.uname{background:url(./././images/img/name.jpg) no-repeat 0 0;}
+.index_box input.pass{background:url(./././images/img/Cipher.jpg) no-repeat 0 0;}
+.index_box input.vifcode{ width:176px; margin-bottom:28px; padding-left:20px; float:left;}
+.index_box img{height:40px; width:100px;margin-top:6px;padding-left:15px;}
+.index_box input.login_button{clear:both;display:block;width:162px;height:45px; line-height:45px;background:#0683b1;color:#fff;}
+.index_box input.login_button:hover{ cursor:pointer;}
+.index_box2{position:absolute; left:250px;top:280px;}
+.index_box span.error_msg{color:#FF0000; font-size:13px;}

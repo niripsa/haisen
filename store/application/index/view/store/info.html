@@ -1,0 +1,226 @@
+{include file="public/header" /}
+<!-- 上传插件 webuploader -->
+<link type="text/css" rel="stylesheet" href="/static/plugins/webuploader/webuploader.css">
+<link type="text/css" rel="stylesheet" href="/static/plugins/webuploader/image-upload/style.css" />
+
+<style type="text/css">
+    #store_map { width: 700px;height: 300px; overflow: hidden; font-family:"微软雅黑";}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=qGtz7SlCuDnmMS8oNfvfxyVP2lLdZkZx"></script>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5> 商户信息 <small> 自定义商户信息 </small></h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form action="<?php echo url( 'Store/up_info' ); ?>" method="post" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商户分类 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="<?php echo $store_info['class_name']; ?>" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 佣金钱包 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="<?php echo $store_info['wallet_name']; ?>" disabled />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商户名称 </label>
+                                <div class="col-sm-4">
+                                    <input type="text" name="store_name" class="form-control" value="<?php echo $store_info['store_name']; ?>" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 联系电话 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" name="phone" class="form-control" value="<?php echo $store_info['phone']; ?>" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商户LOGO </label>
+                                <input type="hidden" id="store_logo" name="store_logo" value="<?php echo $store_info['store_logo']; ?>" />
+                                <div class="col-sm-2">
+                                    <div>
+                                        <div id="logoList" class="uploader-list">
+                                            <div class="file-item thumbnail upload-state-done">
+                                            <img src="<?php echo pic_url( $store_info['store_logo'] ); ?>" width='100' height='100'>
+                                            </div>
+                                        </div>
+                                        <div id="logoPicker">选择图片</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 商户轮播图 </label>
+                                <div class="col-sm-2" style="width: 80%">
+                                    <div id="picList" class="uploader-list" style="width: 100%; overflow: hidden;">
+                                    <?php if ( $store_info['store_pic'] ) { ?>
+                                    <?php $store_pic = explode( ',', $store_info['store_pic'] ); ?>
+                                    <?php foreach ( (array)$store_pic as $k => $v ) { ?>
+                                        <div class="file-item thumbnail upload-state-done">
+                                        <img src="<?php echo pic_url( $v ); ?>">
+                                        </div>
+                                    <?php } } ?>
+                                    </div>
+                                    <input type="hidden" id="store_pic" name="store_pic" class="form-control" value="<?php echo $store_info['store_pic']; ?>" />
+                                    <div class="webuploader-pick" data-toggle="modal" data-target="#myModal" >上传轮播图</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 选取坐标 </label>
+                                <div id="store_map"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 坐标 </label>
+                                <div class="col-sm-2">
+                                    <input type="text" id="longitude" name="longitude" class="form-control" value="<?php echo $store_info['longitude']; ?>" />
+                                </div>
+                                <div class="col-sm-2">
+                                    <input type="text" id="latitude" name="latitude" class="form-control" value="<?php echo $store_info['latitude']; ?>" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 详细地址 </label>
+                                <div class="col-sm-4">
+                                    <input type="text" id="address" name="address" class="form-control" value="<?php echo $store_info['address']; ?>" />
+                                </div>
+                            </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="submit">保存内容</button>
+                                    <button class="btn btn-white" type="submit">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+ <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" 
+             aria-hidden="true">×
+          </button>
+          <h4 class="modal-title" id="myModalLabel">
+            商户轮播图
+          </h4>
+       </div>
+       <div class="modal-body">
+            <!--头部，相册选择和格式选择-->
+            <div id="uploader">
+                <div class="queueList">
+                    <div id="dndArea" class="placeholder">
+                        <div id="filePicker"></div>
+                        <p>或将图片拖到这里，建议上传3张</p>
+                    </div>
+                </div>
+                <div class="statusBar" style="display:none;">
+                    <div class="progress">
+                        <span class="text">0%</span>
+                        <span class="percentage"></span>
+                    </div><div class="info"></div>
+                    <div class="btns">
+                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <div class="modal-footer">
+          <button type="button" class="btn btn-primary insert_images">
+             确定
+          </button>
+          <button type="button" class="btn btn-default" 
+             data-dismiss="modal">取消
+          </button>
+       </div>
+    </div><!-- /.modal-content -->
+ </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<script type="text/javascript">
+var master_domain = "<?php echo config( 'master_domain' ); ?>";
+$('document').ready( function ( argument ) {
+    $('.insert_images').on( 'click', function () {
+        /* 图片显示 */
+        var list = new Array(); //定义一数组
+        list = $( '#store_pic' ).val().split( ',' ); //字符分割
+        var pic_html = '';
+        $.each( list, function( n, value ) {
+            if ( value !== null && value !== undefined && value !== '' )
+            {
+                value = master_domain + value;
+                pic_html += '<div class="file-item thumbnail upload-state-done">';
+                pic_html += '<img src="'+ value +'">';
+                pic_html += '</div>';
+            }
+        });
+        $( '#picList' ).html( pic_html );
+
+        uploader = "<div class='queueList'><div id='dndArea' class='placeholder'><div id='filePicker'></div></div></div><div class='statusBar' style='display:none;'><div class='progress' style='position:relative;'><span class='text'>0%</span><span class='percentage'></span></div><div class='info'></div><div class='btns'><div class='uploadBtn'>开始上传</div></div></div>";
+        // 重置uploader
+        $('#uploader').html(uploader);
+        // 隐藏Modal
+        $('#myModal').modal( 'hide' );
+    });
+});
+</script>
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map( 'store_map' );            
+    map.centerAndZoom( "即墨", 11 );
+    theLocation();
+    map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+    var geoc = new BMap.Geocoder();
+    //单击获取点击的经纬度
+    map.addEventListener( "click", function(e) {
+        $( '#longitude' ).val( e.point.lng );
+        $( '#latitude' ).val( e.point.lat );
+        /* TODO 红点定位 */
+        theLocation();
+        /* 详细地址 */
+        var pt = e.point;
+        geoc.getLocation( pt, function( rs ) {
+            var addComp = rs.addressComponents;
+            var address = addComp.city + addComp.district + addComp.street + addComp.streetNumber;
+            $( '#address' ).val( address );
+        });
+    });
+
+    // 用经纬度设置地图中心点
+    function theLocation()
+    {
+        map.clearOverlays(); 
+        var new_point = new BMap.Point(document.getElementById("longitude").value,document.getElementById("latitude").value);
+        var marker = new BMap.Marker(new_point);  // 创建标注
+        map.addOverlay(marker);              // 将标注添加到地图中
+        map.panTo(new_point);      
+    }
+
+</script>
+
+<script type="text/javascript">
+    var logo_server   = '{:url('Upload/store_logo')}';
+    var banner_server = '{:url('Upload/store_banner')}';
+    var upload_swf    = '/static/plugins/webuploader/Uploader.swf';
+</script>
+<script type="text/javascript" src="/static/plugins/webuploader/webuploader.js"></script>
+<script type="text/javascript" src="/static/plugins/webuploader/image-upload/storelogo.js"></script>
+<script type="text/javascript" src="/static/plugins/webuploader/image-upload/storepic.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

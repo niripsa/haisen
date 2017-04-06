@@ -1,0 +1,117 @@
+body{ background:#efefef; font-size:13px;}
+a:hover {color:#DB383E;}
+.menunav{
+/*-webkit-box-shadow: 0 -.1rem #fff inset;*/
+display: -webkit-box;
+width:76%;
+float:right;
+}
+.menunav a{
+display: block;
+-webkit-box-flex: 1;
+text-align: center;
+width: 100%;
+font-size: 12px;
+position: relative;
+}
+.menunav a i{
+display: block;
+width: 100%;
+height:43px;
+clear: both;
+}
+.menunav a:after {
+content: '';
+display: block;
+height: 40%;
+position: absolute;
+right: 0;
+top: 24%;
+}
+
+.logoqu{ background:#fff;opacity:0.8;filter:alpha(opacity=80);}
+.menunav a{ color:#000}
+.indexitem .ptitle{background:url(./images/dian2.jpg) 3px center no-repeat #FFF;}
+.indexitem .ptitle span{ margin:auto; text-align:left; padding-left:12px; display:inline;}
+.indexitem .ptitle span a{ color:#D92816}
+.buyfals{width:56px; height:22px; display:block; text-align:center; line-height:22px; font-size:12px; background:#DB383E;border-radius:5px; position:absolute; bottom:13px; right:10px; z-index:10; color:#FFFFFF;}
+
+.addcar {background-color: #DB383E;}
+.footers{ background:#fafafa; border-top:1px solid #ededed}
+.rexian{font-size:14px; color:#DB383E}
+.footers p,.footers p a{ color:#666}
+
+#header { background:#ee3838;opacity:0.8;filter:alpha(opacity=80); }
+.shoptitle span{ text-shadow:none; font-size:14px;color:#fff}
+.mainhead .shopinfol p.gdesc{ color:#DB383E}
+.price{ color:#DB383E}
+.logoright p span{line-height:46px;background:#bc242a; width:85px; float:right; text-align:center; color:#FFF; font-size:14px; font-weight:bold}
+.logoright div{background: url(./images/dian.png) right 17px no-repeat; position:relative;background-size:auto}
+.logoright div a{ height:47px; line-height:47px;}
+.logoright div .showmenu{  display:none;height:auto; width:120px; background:#ededed; position:absolute; right:-10px; top:47px; z-index:9; background:url(./images/cbg.png) repeat;border-radius:0px 0px  5px 5px;}
+.logoright div .showmenu p{ text-shadow:none; height:24px; border-bottom:1px solid #e8e8e8; line-height:24px; text-align:center}
+.logoright div .showmenu p a{ height:24px; line-height:24px; width:100%; display:block; color:#666}
+.logoright div .showmenu p a:hover{ background:#ededed}
+
+.top_bar{ height:50px; border-top:1px solid #d8d8d8;background:#83181E;position: fixed; z-index: 900; bottom: 0; left: 0; right: 0; margin: auto; font-family: Helvetica, Tahoma, Arial, Microsoft YaHei, sans-serif; padding-bottom:4px;}
+.top_menu{ height:55px;}
+.top_menu li{ cursor:pointer; width:25%; float:left; height:55px;}
+.top_menu li a{ display:block; text-align:center; padding-top:32px; padding-bottom:5px;color:#000}
+.top_menu li a:hover{ color:#DB383E}
+.top_menu li a label{ cursor:pointer; display:block; height:18px; line-height:18px;}
+.top_menu li.li11 a{ background:url(./images/iconfont-favor.png) center 5px no-repeat;color:#666}
+.top_menu li.li11 a:hover{ background:url(./images/iconfont-favor2.png) center 5px no-repeat; color:#DB383E}
+.top_menu li.li1 a{ background:url(./images/shopping.png) center 5px no-repeat}
+.top_menu li.li1 a:hover{ background:url(./images/shopping.png) center 5px no-repeat}
+.top_menu li.li2 a{ background:url(./images/search.png) center 5px no-repeat}
+.top_menu li.li2 a:hover{ background:url(./images/search.png) center 5px no-repeat}
+.top_menu li.li3 a{ background:url(./images/shopsetup.png) center 5px no-repeat;}
+.top_menu li.li3 a:hover{ background:url(./images/shopsetup.png) center 5px no-repeat;}
+.top_menu li.li4 a{ background:url(./images/member.png) center 5px no-repeat}
+.top_menu li.li4 a:hover{ background:url(./images/member.png) center 5px no-repeat}
+.top_menu li.li5 a{ background:url(./images/li4.png) center 5px no-repeat}
+.top_menu li.li5 a:hover{ background:url(./images/li4_h.png) center 5px no-repeat}
+.top_menu li.li55 a{ background:url(./images/li44.png) center 5px no-repeat; color:#666}
+.top_menu li.li55 a:hover{ background:url(./images/li4_h.png) center 5px no-repeat; color:#DB383E}
+.loginbut{padding:5px; background:#ff7900; color:#fff;width:100%; line-height:25px; cursor:pointer; font-weight:bold; border:none; font-size:14px}
+.top_menu li.li1 a,.top_menu li a label{ font-size:13px;}
+.top_menu li a{ }
+.mainbottombg{ background:none; border-bottom:1px solid #ededed; height:35px; line-height:35px;}
+.mainbottombg span{ width:50%; position:static; left:0px; float:left; background:none}
+.mainbottombg span.ac{ background:#ededed}
+.vippfont{ color:#DB383E}
+.mainhead .shopinfol p{ line-height:30px}
+.navbar{ background:#ee3838}
+.meCenter .meCenterBoxAvatar{ top:15px;}
+.meCenter .meCenterBoxWriting p{ color:#343434}
+.logoqu .logos{ left:5px; bottom:5px;border-radius:5px}
+
+.top{width: 100%;position: relative;}
+.top > img{width: 100%;}
+.avatar{position: absolute;bottom: -50px;left:10px;font-size: 1.5em;color: white;}
+.avatar img{width: 90px;height: 90px;vertical-align: top;}
+
+.list{width: 70%;float: right;overflow: hidden;}
+.list ul li{text-align: center;width: 25%;float: left;}
+.list ul li img{width: 44px;height: 44px;}
+.list ul li p{font-size: 0.8em;margin-bottom: 5px;}
+.list ul li h1{line-height:1.8em;font-size: 2em;}
+
+.si{width: 100%;margin-top: 10px;}
+.si img{width: 100%;}
+
+.san {width: 100%;border-top:1px solid #ccc;border-bottom:1px solid #ccc;overflow:hidden;}
+.san div{float: left;width: 42%;}
+.san div+div{width: 57.5%;}
+.san div a{display: block;width: 100%;}
+.san div img{width: 100%;display: block;}
+
+.ad{margin-top: 10px;width: 100%;}
+.ad img{width: 100%;}
+
+.lou{margin-top:5px;width:100%;}
+.lou li{margin-top: 8px;}
+.lou li img{width: 100%;}
+
+.foot{text-align: center;margin-top: 10px;}
+.foot a{margin-left: 10px;font-size: 0.8em;}

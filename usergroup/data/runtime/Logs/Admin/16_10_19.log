@@ -1,0 +1,820 @@
+[ 2016-10-19T14:45:15+08:00 ] 101.226.89.14 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:45:16+08:00 ] 101.226.89.14 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:46:22+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:46:55+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=public&a=dologin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE `user_login` = '幸福每一天' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: UPDATE `up_users` SET `user_login`='幸福每一天',`user_pass`='###5efabfd4d3a69e898bc68d3ac10ff14a',`user_nicename`='',`user_email`='',`user_url`='',`avatar`=NULL,`sex`='0',`birthday`=NULL,`signature`=NULL,`last_login_ip`='60.209.113.5',`last_login_time`='2016-10-19 14:46:55',`create_time`='2000-01-01 00:00:00',`user_activation_key`='',`user_status`='1',`score`='0',`user_type`='1',`coin`='0',`mobile`='',`uid`='3289',`isadd`='2' WHERE `id` = '51' [ RunTime:0.0000s ]
+
+[ 2016-10-19T14:46:55+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 176 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 132 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:46:55+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: select VERSION() as version [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046876s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046876s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:03+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Usergroup&a=index&menuid=176
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015626s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `gz_user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_user_tuijian` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_goods_order` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_group_goods_order` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_crowd_goods_order` [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: key D:\wwwroot\custom_fenxiao\usergroup\application\Admin\Controller\UsergroupController.class.php 第 25 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `gz_user_tuijian` as tb1 left join gz_user as tb2 on tb1.uid = tb2.user_id  WHERE (  tb1.uid = '3289' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT tb1.*,tb2.subscribe_time,tb2.reg_time,tb2.nickname,tb2.headimgurl,tb2.money_ucount,tb2.points_ucount,tb2.share_ucount,tb2.guanzhu_ucount,tb2.is_subscribe FROM `gz_user_tuijian` as tb1 left join gz_user as tb2 on tb1.uid = tb2.user_id  WHERE (  tb1.uid = '3289' ) ORDER BY tb1.parent_uid ASC,tb2.money_ucount DESC,tb2.share_ucount DESC,tb1.id ASC LIMIT 0,100   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `gz_user_tuijian` WHERE ( uid!=3289 and parent_uid=3289 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `up_users` WHERE ( uid=3289 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `gz_user_tuijian` WHERE ( parent_uid=3289 )  [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='B' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='C' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='D' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0156s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_group_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id = tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_crowd_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id = tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='B' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='C' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='D' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_group_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_crowd_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:22+08:00 ] 101.226.89.14 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0156s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 176 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 132 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:23+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.015626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015626s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: select VERSION() as version [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:51+08:00 ] 101.226.89.14 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0156s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 176 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 132 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:51+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: select VERSION() as version [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:58+08:00 ] 101.226.89.14 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0156s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 176 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 132 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:47:59+08:00 ] 117.185.27.104 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: select VERSION() as version [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:21+08:00 ] 117.185.27.104 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_menu` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 0 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0156s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('user/indexadmin/default')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 176 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 132 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/index')  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_menu` WHERE `parentid` = 149 AND `status` = 1 ORDER BY `listorder` ASC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminterm/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('portal/adminpost/index')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/clearcache')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/setting/site')  [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/user/userinfo')  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015626s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:21+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: select VERSION() as version [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.015625s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015625s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:21+08:00 ] 101.226.66.181 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:21+08:00 ] 101.226.66.181 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:23+08:00 ] 101.226.33.218 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015626s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:23+08:00 ] 101.226.33.218 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:24+08:00 ] 101.226.51.230 /usergroup/index.php?g=admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:24+08:00 ] 101.226.51.230 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:25+08:00 ] 101.226.33.226 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:48:34+08:00 ] 101.226.89.14 /usergroup/index.php?g=Admin&m=Usergroup&a=index&menuid=176
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=51 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_role_user` [ RunTime:0.0000s ]
+SQL: SELECT `role_id` FROM up_role_user a INNER JOIN up_role as b on a.role_id =b.id  WHERE `user_id` = '51' AND `status` = 1  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_auth_access` [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_auth_access a INNER JOIN up_auth_rule as b on a.rule_name =b.name  WHERE a.role_id IN ('2') AND b.name IN ('admin/usergroup/index')  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_user` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_user_tuijian` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `gz_goods_order` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_group_goods_order` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `gz_crowd_goods_order` [ RunTime:0.0000s ]
+NOTIC: [8] Undefined index: key D:\wwwroot\custom_fenxiao\usergroup\application\Admin\Controller\UsergroupController.class.php 第 25 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `gz_user_tuijian` as tb1 left join gz_user as tb2 on tb1.uid = tb2.user_id  WHERE (  tb1.uid = '3289' ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT tb1.*,tb2.subscribe_time,tb2.reg_time,tb2.nickname,tb2.headimgurl,tb2.money_ucount,tb2.points_ucount,tb2.share_ucount,tb2.guanzhu_ucount,tb2.is_subscribe FROM `gz_user_tuijian` as tb1 left join gz_user as tb2 on tb1.uid = tb2.user_id  WHERE (  tb1.uid = '3289' ) ORDER BY tb1.parent_uid ASC,tb2.money_ucount DESC,tb2.share_ucount DESC,tb1.id ASC LIMIT 0,100   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(id) AS tp_count FROM `gz_user_tuijian` WHERE ( uid!=3289 and parent_uid=3289 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `up_users` WHERE ( uid=3289 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `gz_user_tuijian` WHERE ( parent_uid=3289 )  [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='B' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='C' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='D' and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_group_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id = tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_crowd_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id = tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='B' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='C' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_goods_order` as tb1 left join gz_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb1.goods_bianhao='D' and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_group_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT SUM(tb1.goods_number) AS tp_sum FROM `gz_crowd_goods_order` as tb1 left join gz_group_goods_order_info as tb2 on tb1.order_id=tb2.order_id  WHERE ( tb2.shipping_status=5 and tb2.pay_status=1 and tb2.user_id in(3289) and tb2.add_time>1472659200 and tb2.add_time<1475251200 ) LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015625s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:01+08:00 ] 101.226.89.117 /usergroup/index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:01+08:00 ] 101.226.89.117 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:02+08:00 ] 101.226.125.103 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:02+08:00 ] 101.226.125.103 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:24+08:00 ] 112.65.193.14 /usergroup/index.php?g=Admin&m=Main&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:50:24+08:00 ] 112.65.193.14 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:51:31+08:00 ] 101.226.33.220 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015626s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:53:08+08:00 ] 101.226.65.102 /usergroup/index.php?g=Admin&m=Index&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-10-19T14:53:08+08:00 ] 101.226.65.102 /usergroup/index.php?g=admin&m=public&a=login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: admin_username D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Admin\17c864e00f937e6528a86826c496ba3b.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

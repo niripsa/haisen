@@ -1,0 +1,63 @@
+﻿body{ background: #F8F8F8;}
+
+.menu{ font-size: 0; text-align: center; margin-top: 12px; display: block; border-bottom: 1px solid #ccc; }
+.menu li{ display: inline-block; margin: 0 15px 15px;}
+.menu li i{ display: block;}
+.menu li p{ font: 13px/18px "microsoft yahei"; color: #666; padding-top: 3px;}
+
+.fouse{  margin:0 auto; position:relative; overflow:hidden; zoom:1; clear:both; max-width:640px; background: #fff; padding: 15px 0; border-bottom: 1px solid #ddd;}
+.fouse .hd_img{ width:100%; height:11px; z-index:1; text-align:center; margin-top: 10px; }
+.fouse .hd_img ul{ display:inline-block; height:8px; padding:3px 5px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; font-size:0; vertical-align:top;}
+.fouse .hd_img ul li{ display:inline-block; width:4px; height:4px; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; margin:0 5px;  vertical-align:top; overflow:hidden; border: 2px solid #ccc;  }
+.fouse .hd_img ul .on{ background:#ccc;  }
+.fouse .hd_img{ position:relative; z-index:0; overflow:hidden; zoom:1; clear:both; }
+.fouse .bd_img li img{ width:199px; display:block; margin: 0 auto;}
+.fouse .bd_img li a{ -webkit-tap-highlight-color:rgba(0, 0, 0, 0); /* 取消链接高亮 */  }
+
+.sp{ max-width: 640px; margin: 0 auto; background: #fff; margin-bottom: 8px;}
+.sp .title{ padding: 15px 0 15px 20px ; border-bottom: 1px solid #ddd; position: relative;}
+.sp .title h4{ font: 17px/21px "microsoft yahei"; color: #ff4800;}
+.sp .title p{ font: 15px/20px "microsoft yahei"; color: #333;}
+.sp .title a.sc{ position: absolute; right: 20px; top: 25px; text-align: center;}
+.sp .title a.sc i{ font: 21px/21px "宋体"; color: #666; display: block; font-style: normal;}
+.sp .title a.sc p{ font: 12px/14px "microsoft yahei"; color: #666;}
+.sp .title a.selected i{ color: #ff0000;}
+.sp .title a.selected p{ color: #ff0000;}
+.sp .detail{ overflow: hidden;}
+.sp .detail li{ overflow: hidden; font-size: 0; border-bottom: 1px solid #ddd;}
+.sp .detail li span{ display: inline-block; width: 55px; padding-left: 30px; font: 12px/48px "microsoft yahei"; color: #999;}
+.sp .detail li b{ display: inline-block; margin-left: 20px; font: 12px/48px "microsoft yahei"; color: #333;}
+.sp .merchants{ overflow: hidden; border-bottom: 1px solid #ddd ; }
+.sp .merchants a{ display: block; padding-left: 20px; background: url(../img/1017.png) 90% center no-repeat; font: 12px/48px "microsoft yahei"; color: #ff4800;}
+.sp .merchants a span{ color:#ff4800;}
+
+.main{ max-width: 640px; margin: 0 auto 10px;}
+.submenu1{ font-size: 0; text-align: center; border-top: 1px solid #ccc;width:100%;}
+.submenu1 li{ display: inline-block; font: 14px/48px "microsoft yahei"; color: #727171; width: 50%; border-left: 1px solid #ddd; margin-left: -1px; border-bottom: 1px solid #ddd;float:left;}
+.submenu1 li.cur{ border-color: #eee; background: #fff; color: #ffa200;}
+.item{ padding-top: 5px;background: #fff;}
+.list{ display: none;}
+.list table{ width: 100%;}
+.list th{ width: 30%; font: 12px/20px "microsoft yahei"; color: #333; padding: 10px 5px; border-bottom: 1px solid #ddd; text-align: left;}
+.list td{ font: 12px/20px "microsoft yahei"; color: #666; width: 70%; padding: 10px 0; border-bottom: 1px solid #ddd;word-break: break-all;
+    word-wrap: break-word;}
+.list .service{padding-left:10px;}
+.list .service p{ font: 12px/20px "microsoft yahei"; color: #666;padding-top: 5px;padding-bottom: 5px;}
+.list .service span{ font: 14px/22px "microsoft yahei"; color: #0054b3;}
+
+.submenu{ text-align: center; font-size: 0; max-width: 640px; border-bottom: 1px solid #ddd; margin-bottom: 10px; padding-bottom: 10px;margin: 0px auto;}
+.submenu li{ display: inline-block; font: 15px/16px "microsoft yahei"; border-right: 1px solid #ccc; padding-right: 15px; margin-right: 15px; }
+.submenu li a{color: #666;}
+
+.pcph{ text-align: center; background: #fff; padding: 10px 0;margin-bottom: 0px;}
+.pcph li{ display: inline-block; font: 15px/16px "microsoft yahei"; margin: 0 18px;}
+.pcph li a{ color: #666;}
+.pcph li img{ margin-right: 4px;}
+
+.gm{ position: fixed; bottom: 0; width: 100%; left: 0; height: 50px; background: #5c5c5c; font-size: 0; text-align: center;}
+.gm a{ display: inline-block; font: 17px/40px "microsoft yahei"; color: #fff; vertical-align: middle; margin-top: 6px;}
+.gm a.gmai{ width: 115px; height: 40px; background: #ff4800; border-radius: 4px;}
+.gm a.jrgwc{ width: 115px; height: 40px; background: #ffb400; border-radius: 4px; margin: 6px 10px 0;}
+.gm a.gwc{ margin-top: 15px;}
+
+.copy{ margin-bottom: 80px;}

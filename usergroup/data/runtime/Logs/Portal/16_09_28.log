@@ -1,0 +1,200 @@
+[ 2016-09-28T08:25:52+08:00 ] 42.156.251.187 /usergroup/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015626s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.015625s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0156s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0156s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.250005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.250005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T14:02:01+08:00 ] 101.226.68.213 /usergroup/index.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093752s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093752s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T20:45:30+08:00 ] 60.209.113.5 /usergroup/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined property: Tree::$str D:\wwwroot\custom_fenxiao\usergroup\simplewind\Lib\Util\Tree.class.php 第 301 行.
+SQL: SHOW COLUMNS FROM `up_slide_cat` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_slide_cat` INNER JOIN up_slide as b on up_slide_cat.cid =b.slide_cid  WHERE ( cat_idname='portal_index' and slide_status=1 ) ORDER BY listorder ASC LIMIT 0,5   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT `post_title`,`post_excerpt`,`tid`,`smeta` FROM up_term_relationships a INNER JOIN up_posts as b on a.object_id =b.id INNER JOIN up_users as c on b.post_author = c.id  WHERE `status` = 1 AND `post_status` = 1 AND `term_id` IN ('2') ORDER BY listorder asc LIMIT 4   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_links` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_links` WHERE ( link_status=1 ) ORDER BY listorder ASC  [ RunTime:0.0000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.109377s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.109377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T20:45:34+08:00 ] 60.209.113.5 /usergroup/index.php?g=portal&m=AdminTerm&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.031251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031251s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_terms` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_terms` ORDER BY `listorder` asc  [ RunTime:0.0313s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T20:45:56+08:00 ] 60.209.113.5 /usergroup/index.php?g=&m=AdminTerm&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `up_terms` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_terms` ORDER BY `path` asc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T20:46:01+08:00 ] 60.209.113.5 /usergroup/index.php?g=portal&m=AdminPost&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.015625s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015626s ]
+SQL: SHOW COLUMNS FROM `up_users` [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_users` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.0000s ]
+NOTIC: D方法实例化没找到模型类Portal\Model\PostsModel
+SQL: SHOW COLUMNS FROM `up_posts` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_terms` [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `up_term_relationships` [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM up_term_relationships a INNER JOIN up_posts b ON a.object_id = b.id  WHERE ( a.status=1 ) LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM up_term_relationships a INNER JOIN up_posts b ON a.object_id = b.id  WHERE ( a.status=1 ) ORDER BY a.listorder ASC,b.post_modified DESC LIMIT 0,20   [ RunTime:0.0000s ]
+SQL: SELECT `id`,`user_login` FROM `up_users` WHERE ( user_status=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `term_id`,`name` FROM `up_terms` ORDER BY term_id = 0  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `up_terms` ORDER BY `listorder` asc  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: end_time D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Portal\9e8b2aead7c344b4e8f09dcbf8c108d1.php 第 61 行.
+NOTIC: [8] Undefined index: keyword D:\wwwroot\custom_fenxiao\usergroup\data\runtime\Cache\Portal\9e8b2aead7c344b4e8f09dcbf8c108d1.php 第 63 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031251s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031251s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\TmplStripSpaceBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-28T20:49:04+08:00 ] 101.226.66.180 /usergroup/index.php?g=&m=AdminTerm&a=add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015625s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015625s ]
+
+[ 2016-09-28T20:49:09+08:00 ] 101.226.69.246 /usergroup/index.php?g=portal&m=AdminPost&a=index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: Run Common\Behavior\InitHookBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+

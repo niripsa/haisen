@@ -1,0 +1,68 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap">
+		<ul class="nav nav-tabs">
+			<li><a href="{:U('Finance/index')}" target="_self">财务管理</a></li>
+			<li class="active"><a href="javascript:;" >财务修改</a></li>
+		</ul>
+		<form method="post" class="form-horizontal js-ajax-form" action="{:U('Finance/edit_post')}">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">学生姓名</label>
+					<div class="controls">
+						<input type="text" name="name" value="{$finance_data.name}" <if condition="$roleid eq '4'" >readonly</if> />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">申请国家</label>
+					<div class="controls">
+						<input type="text" name="applycountry" value="{$finance_data.applycountry}" <if condition="$roleid eq '4'" >readonly</if> />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">缴费</label>
+					<div class="controls">
+						<input type="text" name="payment" value="{$finance_data.payment}" <if condition="$roleid eq '4'" >readonly</if> />
+						<span class="form-required">*</span>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">备注</label>
+					<div class="controls">
+						<textarea name="beizhu" cols="30" rows="10" <if condition="$roleid eq '4'" >readonly</if>>{$finance_data.beizhu}</textarea>
+					</div>
+				</div>
+				<div class="control-group">
+					<label class="control-label">回执单</label>
+					<div class="controls">
+						<fieldset>
+									<legend>回执单列表</legend>
+									<ul id="photos" class="pic-list unstyled">
+										<foreach name="photos_url" item="vo">
+										<li id="savedimage{$key}">
+											<input type="text" name="photos_url[]" value="{:sp_get_asset_upload_path($vo)}" title="双击查看" style="width: 310px;" ondblclick="image_priview(this.value);" class="input image-url-input"> 
+											<!--input type="text" name="photos_alt[]" value="{$vo.alt}" style="width: 160px;" class="input image-alt-input" onfocus="if(this.value == this.defaultValue) this.value = ''" onblur="if(this.value.replace(' ','') == '') this.value = this.defaultValue;"-->
+											<a href="javascript:flashupload('replace_albums_images', '图片替换','savedimage{$key}',replace_image,'10,gif|jpg|jpeg|png|bmp,0','','','')">替换</a>
+											<a href="javascript:remove_div('savedimage{$key}')">移除</a>
+										</li>
+										</foreach>
+									</ul>
+								</fieldset>
+								<a href="javascript:;" onclick="javascript:flashupload('albums_images', '图片上传','photos',change_images,'10,gif|jpg|jpeg|png|bmp,0','','','')" class="btn btn-small">选择图片</a>
+					</div>
+				</div>				
+			</fieldset>
+			<div class="form-actions">
+				<input type="hidden" name="id" value="{$finance_data.id}" />
+				<button type="submit" class="btn btn-primary js-ajax-submit">保存</button>
+				<a class="btn" href="{:U('Finance/index')}">{:L('BACK')}</a>
+			</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/js/content_addtop.js"></script>
+</body>
+</html>

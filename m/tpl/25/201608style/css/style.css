@@ -1,0 +1,120 @@
+*{ padding:0; margin:0}
+img{ border:0; }
+ul,ol{ list-style:none}
+a{ text-decoration:none}
+.clearfix:after {visibility: hidden;display: block;font-size: 0; content: " "; clear: both; height: 0;}
+.clearfix { display: inline-table; }
+/* Hides from IE7 - mac \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide from IE7 - mac */
+
+.header_dl{ max-width: 640px; margin: 0 auto; height: 45px; background: #0054a7; position: relative;}
+.header_dl a.dl{ width: 24px; height: 20px; position: absolute; left: 15px; top: 28%;}
+.header_dl a.dl img{ display: block; height: 100%;}
+.header_dl h4{ font: 17px/45px "microsoft yahei"; color: #fff; text-align: center;}
+
+.menubtn{ position: absolute; top: 25%; right: 15px;}
+
+.submenu{ text-align: center; font-size: 0; max-width: 640px; border-bottom: 1px solid #ddd;  padding-bottom: 10px; background: #fff; margin: 8px auto 0; border-top: 1px solid #ddd; padding-top: 10px;}
+.submenu li{ display: inline-block; font: 15px/16px "microsoft yahei"; border-right: 1px solid #ccc; padding-right: 15px; margin-right: 15px; }
+.submenu li a{color: #666;}
+
+.menu{ font-size: 0; text-align: center; padding-top: 12px; display: block; border-bottom: 1px solid #ccc;max-width: 640px;margin: 0 auto; }
+.menu li{ display: inline-block; margin: 0 15px 15px;}
+.menu li i{ display: block;}
+.menu li i img{ width: 40px; height: 40px;}
+.menu li p{ font: 13px/18px "microsoft yahei"; color: #666; padding-top: 3px;}
+
+.pcph{ text-align: center; margin-bottom: 80px;}
+.pcph li{ display: inline-block; font: 15px/16px "microsoft yahei"; margin: 0 18px;}
+.pcph li a{ color: #666;}
+.pcph li img{ margin-right: 4px;}
+
+.copy{ font: 12px/24px "microsoft yahei"; color: #999; text-align: center; padding-bottom: 8px; background: #fff;}
+
+#popup_container {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    min-width: 320px; /* Dialog will be no smaller than this */
+    max-width: 640px; /* Dialog will wrap after this width */
+    background: #FFF;
+    border: solid 1px #0054A7;
+    color: #000;
+    /*-moz-border-radius: 5px;*/
+    /*-webkit-border-radius: 5px;*/
+    /*border-radius: 5px;*/
+}
+
+#popup_title {
+    font-size: 14px;
+    font-weight: bold;
+    /*text-align: center;*/
+    line-height: 1.75em;
+    color: #666;
+    border: solid 1px #FFF;
+    border-bottom: solid 1px #cccccc;
+    cursor: default;
+    padding: 0.2em;
+    margin: 0em;
+}
+
+#popup_content {
+    /*background: 16px 16px no-repeat url(http://keleyi.com/keleyi/phtml/jqplug/index/info.gif);*/
+    padding: 1em 1.75em;
+    margin: 0em;
+}
+
+#popup_content.alert {
+    /*background-image: url(http://keleyi.com/keleyi/phtml/jqplug/index/info.gif);*/
+}
+
+#popup_content.confirm {
+   /* background-image: url(http://keleyi.com/keleyi/phtml/jqplug/index/important.gif);*/
+}
+
+#popup_content.prompt {
+   /* background-image: url(http://keleyi.com/keleyi/phtml/jqplug/index/help.gif);*/
+}
+
+#popup_message {
+    /*padding-left: 48px;*/
+}
+
+#popup_panel {
+    text-align: center;
+    margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+    margin: .5em 0em;
+}
+#popup_ok {
+    background: #0054A7 none repeat scroll 0 0;
+    /*border-radius: 4px;*/
+    height: 30px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    width: 100px;
+    border: 1px;
+    color: #FFFFFF;
+    z-index: 100000;
+    line-height: 30px;
+    float: left;
+}
+#popup_cancel {
+    background: #0054A7 none repeat scroll 0 0;
+    /*border-radius: 4px;*/
+    height: 30px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    width: 100px;
+    border: 1px;
+    color: #FFFFFF;
+    z-index: 100000;
+    line-height: 30px;
+    float: right;
+}
+
+.fd_loading{background-color: rgb(204, 204, 204);color: rgb(255, 0, 0);opacity: 0.60;text-align: center;height: 55px;line-height: 45px;display: block;margin-bottom: 30px;}
+

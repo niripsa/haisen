@@ -1,0 +1,141 @@
+{include file="public/header" /}
+<!-- 上传插件 webuploader -->
+<style type="text/css">
+    #order_map { width: 700px;height: 300px; overflow: hidden; font-family:"微软雅黑";}
+</style>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5> 订单信息 </h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form action="<?php echo url( 'order/up_info' ); ?>" method="post" class="form-horizontal">
+                        <input type="hidden" name="order_id" value="{$order_info['order_id']}"/>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 订单号 </label>
+                                <div class="col-sm-2" style=" padding-top: 7px;">
+                                    <?php echo $order_info['order_sn']; ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 订单状态 </label>
+                                <div class="col-sm-2" style=" padding-top: 7px;">
+                                    <?php if( $order_info['shipping_status'] == '0' ){?>
+                                        未发货
+                                    <?php }elseif( $order_info['shipping_status'] == '1' ){?>
+                                        配货中  
+                                    <?php }elseif( $order_info['shipping_status'] == '2' ){?>
+                                        已发货
+                                    <?php }elseif( $order_info['shipping_status'] == '3' ){?>
+                                        部分发货
+                                    <?php }elseif( $order_info['shipping_status'] == '4' ){?>
+                                        退货
+                                    <?php }elseif( $order_info['shipping_status'] == '5' ){?>
+                                        已收货
+                                    <?php }?>
+                                    <?php if( $order_info['pay_status'] == '0' ){?>
+                                        未付款
+                                    <?php }elseif( $order_info['pay_status'] == '1' ){?>
+                                        已付款  
+                                    <?php }elseif( $order_info['pay_status'] == '2' ){?>
+                                        已退款
+                                    <?php }?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 下单时间 </label>
+                                <div class="col-sm-4" style=" padding-top: 7px;">
+                                    {$order_info['add_time']|date='Y-m-d H:i:s',###}
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 产品总价 </label>
+                                <div class="col-sm-2" style=" padding-top: 7px;">
+                                   <?php echo $order_info['order_amount']; ?>
+                                </div>
+                            </div>                      
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 收货人 </label>
+                                <div class="col-sm-4" style=" padding-top: 7px;">
+                                    <?php echo $order_info['consignee']; ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 收货地址 </label>
+                                <div class="col-sm-4" style=" padding-top: 7px;">
+                                    <?php echo $order_info['province'] .' '. $order_info['city'] .' '. $order_info['district'] .' '. $order_info['address']; ?>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label"> 电话|手机 </label>
+                                <div class="col-sm-4" style=" padding-top: 7px;">
+                                   <?php echo $order_info['tel'];?>|<?php echo $order_info['mobile'];?>
+                                </div>
+                            </div>
+                            <div class="box-body no-padding">
+              <div class="mailbox-messages">
+                <table class="table table-hover table-striped">
+                  <thead>
+                  <tr>
+                    <th>商品条形码</th>
+                    <th>商品名称</th>
+                    <th>规格</th>
+                    <th>单位</th>
+                    <th>数量</th>
+                    <th>单价</th>
+                    <th>金额</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {volist name='order_list_info' id='vo'}
+                    <tr>
+                      <td>{$vo.goods_sn}</td>
+                      <td>{$vo.goods_name}</td>
+                      <td>{$vo.goods_attr}</td>
+                      <td>{$vo.goods_unit}</td>
+                      <td>{$vo.goods_number}</td>
+                      <td>{$vo.goods_price}</td>
+                      <td><?php echo '￥'.(!empty($vo['goods_price'])? $vo['goods_price'] : $vo['market_price'])*$vo['goods_number'];?></td>
+                    </tr>
+                  {/volist}
+                  </tbody>
+                </table>
+                <!-- /.table -->
+              </div>
+              <!-- /.mail-box-messages -->
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"> 选择物流 </label>
+                <div class="col-sm-2">
+                    <select name="shipping_id" class="form-control m-b">
+                    <?php foreach ( (array)$shipping as $k => $v ) { ?>
+                    <option <?php echo $order_info['shipping_id_true'] == $v['shipping_id'] ? 'selected' : ''; ?> value="<?php echo $v['shipping_id']; ?>"> <?php echo $v['shipping_name']; ?> </option>
+                    <?php } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label"> 物流单号 </label>
+                <div class="col-sm-2">
+                    <input type="text" name="shipping_sn" class="form-control" value="<?php echo $order_info['sn_id']; ?>" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-4 col-sm-offset-2">
+                    <button class="btn btn-primary" type="submit">设置发货</button>
+                    <button class="btn btn-white" onclick="history.back( -1 );" >返回</button>
+                </div>
+            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

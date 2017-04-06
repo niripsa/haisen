@@ -1,0 +1,113 @@
+<admintpl file="header" />
+</head>
+<body>
+	<div class="wrap js-check-wrap">
+		<ul class="nav nav-tabs">
+			<li class="active"><a href="javascript:;">财务管理</a></li>
+			<li><a href="{:U('Finance/add')}" target="_self">财务添加</a></li>
+		</ul>
+		<form class="well form-search" method="post" action="{:U('Finance/index')}">
+			学生姓名： 
+			<input type="text" name="keyword" style="width: 200px;" value="{$keyword}" placeholder="请输入学生姓名...">
+			申请国家： 
+			<input type="text" name="country" style="width: 200px;" value="{$country}" placeholder="请输入申请国家...">
+			<input type="submit" class="btn btn-primary" name="submit" value="搜索" />&nbsp;&nbsp;
+			<input type="submit" class="btn btn-primary" name="submit" value="导出" />
+		</form>
+		<form class="js-ajax-form" action="" method="post">
+			<table class="table table-hover table-bordered table-list">
+				<thead>
+					<tr>
+						<th width="15"><label><input type="checkbox" class="js-check-all" data-direction="x" data-checklist="js-check-x"></label></th>
+						<!--th width="45">添加人</th-->
+						<th width="45">学生</th>
+						<th width="60">申请国家</th>
+						<th width="50">缴费</th>
+						<th width="70">协议是否入库</th>
+						<th width="70">初次绩效核算</th>
+						<th width="70">末次绩效核算</th>
+						<th width="60">语言课佣金</th>
+						<th width="50">到账时间</th>
+						<th width="80">主课佣金</th>
+						<th width="70">到账时间</th>
+						<th width="70">退款</th>
+						<th width="60">绩效扣发</th>
+						<th width="60">回执单</th>
+						<th width="60">操作</th>
+					</tr>
+				</thead>
+				<foreach name="financeArr" item="vo">
+				<tr>
+					<td><input type="checkbox" class="js-check" data-yid="js-check-y" data-xid="js-check-x" name="ids[]" value="{$vo.id}" title="ID:{$vo.id}"></td>
+					<!--td>{$vo.username}</td-->
+					<td>{$vo.name}</td>
+					<td>{$vo.applycountry}</td>
+					<td>{$vo.payment}</td>
+					<td>{$vo.storage}</td>
+					<td>{$vo.firstadjusttime}</td>
+					<td>{$vo.lastadjusttime}</td>
+					<td>{$vo.lanpayment}</td>
+					<td>{$vo.lantime}</td>
+					<td>{$vo.mainpayment}</td>
+					<td>{$vo.maintime}</td>
+					<td>{$vo.refund}</td>
+					<td><a href="javascript:void(0)" title="{$vo.mark}">{$vo.marks}</td>
+					<td><if condition="$vo.img eq ''"><font color="red">未上传</font><else/><font color="green">已上传</font></if></td>
+					<td>
+						<a href="{:U('Finance/edit',array('id'=>$vo['id']))}">{:L('EDIT')}</a> <if condition="$roleid eq '' or $roleid eq '1'">| 
+						<a href="{:U('Finance/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">{:L('DELETE')}</a></if></td>
+				</tr>
+				</foreach>
+			</table>
+			<div class="table-actions">
+				<button class="btn btn-primary btn-small js-ajax-submit" type="submit" data-action="{:U('Finance/deletes')}" data-subcheck="true" data-msg="你确定删除吗？">{:L('DELETE')}</button>
+			</div>
+			<div class="pagination">{$page}</div>
+		</form>
+	</div>
+	<script src="__PUBLIC__/js/common.js"></script>
+	<script>
+		function refersh_window() {
+			var refersh_time = getCookie('refersh_time');
+			if (refersh_time == 1) {
+				window.location = "{:U('Finance/index',$formget)}";
+			}
+		}
+		setInterval(function() {
+			refersh_window();
+		}, 2000);
+		$(function() {
+			setCookie("refersh_time", 0);
+			Wind.use('ajaxForm', 'artDialog', 'iframeTools', function() {
+				//批量移动
+				$('.js-articles-move').click(function(e) {
+					var str = 0;
+					var id = tag = '';
+					$("input[name='ids[]']").each(function() {
+						if ($(this).attr('checked')) {
+							str = 1;
+							id += tag + $(this).val();
+							tag = ',';
+						}
+					});
+					if (str == 0) {
+						art.dialog.through({
+							id : 'error',
+							icon : 'error',
+							content : '您没有勾选信息，无法进行操作！',
+							cancelVal : '关闭',
+							cancel : true
+						});
+						return false;
+					}
+					var $this = $(this);
+					art.dialog.open("__ROOT__/index.php?g=portal&m=AdminPost&a=move&ids="+ id, {
+						title : "批量移动",
+						width : "80%"
+					});
+				});
+			});
+		});
+	</script>
+</body>
+</html>

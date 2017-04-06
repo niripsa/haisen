@@ -1,0 +1,23 @@
+
+
+tel:18051825166 order_cn: express: sn_id: price:
+
+a:5:{s:3:"tel";s:11:"18051825166";s:8:"order_cn";N;s:7:"express";N;s:6:"number";N;s:5:"price";N;}
+
+a:5:{s:3:"tel";s:11:"18051825166";s:8:"order_sn";s:14:"20151429683220";s:7:"express";N;s:6:"number";N;s:5:"price";N;}
+
+a:5:{s:3:"tel";N;s:8:"order_sn";s:14:"20151429683220";s:7:"express";s:6:"快递";s:6:"number";N;s:5:"price";N;}
+
+a:5:{s:3:"tel";N;s:8:"order_sn";s:14:"20151429683220";s:7:"express";s:6:"快递";s:6:"number";s:9:"558899553";s:5:"price";N;}
+
+a:5:{s:3:"tel";N;s:8:"order_sn";s:14:"20151429683220";s:7:"express";s:6:"快递";s:6:"number";s:9:"558899553";s:5:"price";N;}
+
+a:2:{s:5:"sn_id";s:9:"558899553";s:13:"shipping_name";s:6:"快递";}
+
+a:5:{s:3:"tel";N;s:8:"order_sn";s:14:"20151429683220";s:7:"express";N;s:6:"number";N;s:5:"price";N;}
+
+N;
+
+a:5:{s:3:"tel";s:11:"18051825166";s:8:"order_sn";s:14:"20151429683220";s:7:"express";s:6:"快递";s:6:"number";s:9:"558899553";s:5:"price";s:5:"45.00";}
+
+a:52:{s:8:"order_id";s:2:"41";s:8:"order_sn";s:14:"20151429683220";s:8:"group_sn";N;s:7:"user_id";s:2:"23";s:9:"daili_uid";s:1:"0";s:10:"parent_uid";s:1:"0";s:11:"parent_uid2";s:1:"0";s:11:"parent_uid3";s:1:"0";s:12:"order_status";s:1:"2";s:15:"shipping_status";s:1:"0";s:10:"pay_status";s:1:"1";s:9:"consignee";s:3:"中";s:7:"country";s:1:"0";s:8:"province";s:2:"16";s:4:"city";s:3:"221";s:8:"district";s:4:"1855";s:4:"town";s:1:"0";s:7:"village";s:1:"0";s:7:"shop_id";s:1:"0";s:7:"address";s:12:"城市之星";s:7:"zipcode";s:0:"";s:3:"tel";s:0:"";s:6:"mobile";s:11:"18051825166";s:5:"email";s:0:"";s:9:"best_time";s:0:"";s:13:"sign_building";s:0:"";s:10:"postscript";s:0:"";s:11:"shipping_id";s:1:"4";s:16:"shipping_id_true";s:1:"7";s:13:"shipping_name";s:6:"快递";s:6:"pay_id";s:1:"4";s:8:"pay_name";s:12:"微信支付";s:7:"how_oos";s:0:"";s:11:"inv_content";s:0:"";s:12:"goods_amount";s:5:"45.00";s:12:"shipping_fee";s:4:"0.00";s:8:"offprice";s:4:"0.00";s:12:"order_amount";s:5:"45.00";s:7:"referer";s:0:"";s:8:"add_time";s:10:"1429683220";s:12:"confirm_time";s:1:"0";s:8:"pay_time";s:1:"0";s:13:"shipping_time";s:1:"0";s:7:"card_id";s:1:"0";s:8:"bonus_id";s:1:"0";s:5:"sn_id";s:9:"558899553";s:3:"tax";s:4:"0.00";s:9:"parent_id";s:1:"0";s:8:"discount";s:4:"0.00";s:4:"type";s:1:"0";s:9:"is_prints";s:1:"0";s:7:"peisong";N;}
