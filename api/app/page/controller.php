@@ -1085,6 +1085,12 @@ class PageController extends Controller{
                     if ( $p3_uid > 0 && ! in_array( $p3_uid, $ss ) )
                     {
                         $dd['p3_uid'] = $p3_uid;
+                        $ss[] = $p3_uid;
+                        $p4_uid = $this->return_daili_uid($p3_uid);
+                        if($p4_uid > 0 && !in_array($p4_uid,$ss)){
+                            $dd['p4_uid'] = $p4_uid;
+                            $ss[] = $p4_uid;
+                        }
                     }
                 }
             }

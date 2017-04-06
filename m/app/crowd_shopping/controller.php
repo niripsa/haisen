@@ -399,12 +399,12 @@ class Crowd_shoppingController extends Controller{
                         $ss[] = $p2_uid;
                         if($p3_uid > 0 && !in_array($p3_uid,$ss)){
                             $dd['p3_uid'] = $p3_uid;
-                            //$sql = "SELECT daili_uid FROM `{$this->App->prefix()}user_tuijian` WHERE uid = '$p3_uid' LIMIT 1";
-                            //$p4_uid = $this->App->findvar($sql);
-/*                          $p4_uid = $this->return_daili_uid($p3_uid);
-                            if($p4_uid > 0){
+                            $ss[] = $p3_uid;
+                            $p4_uid = $this->return_daili_uid($p3_uid);
+                            if($p4_uid > 0 && !in_array($p4_uid,$ss)){
                                 $dd['p4_uid'] = $p4_uid;
-                            }*/
+                                $ss[] = $p4_uid;
+                            }
                         }
                     }
                 }
@@ -1346,6 +1346,15 @@ class Crowd_shoppingController extends Controller{
         $parent_uid = isset($pu['parent_uid']) ? $pu['parent_uid'] : 0; //分享者
         $parent_uid2 = isset($pu['parent_uid2']) ? $pu['parent_uid2'] : 0; //分享者
         $parent_uid3 = isset($pu['parent_uid3']) ? $pu['parent_uid3'] : 0; //分享者
+
+        $parent_uid4 = $this->return_daili_uid($parent_uid3);
+
+        $aParentIds = array($parent_uid, $parent_uid2, $parent_uid3, $parent_uid4);
+        $sTeamIds = implode(',', $aParentIds);
+        //获取四人的团队积累和
+        $fTeamSum = $this->App->findvar("SELECT sum(person_buy_sum) as team_sum FROM `{$this->App->prefix()}user` WHERE user_id in ($sTeamIds) LIMIT 1");
+        //获得第三级的个人积累
+        $fPersonSum = $this->App->findvar("SELECT person_buy_sum FROM `{$this->App->prefix()}user` WHERE user_id = {$parent_uid3} LIMIT 1");
         
         $daili_uid = isset($pu['daili_uid']) ? $pu['daili_uid'] : 0; //代理
         $moeys = isset($pu['order_amount']) ? $pu['order_amount'] : 0; //实际消费
@@ -1375,6 +1384,7 @@ class Crowd_shoppingController extends Controller{
                     
                     $off = 0;
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_1'] = intval($rts['ticheng180_1_1']*$rts['ticheng180_1_2']/100);
                             if($rts['ticheng180_1'] < 101 && $rts['ticheng180_1'] > 0){
                                 $off = $rts['ticheng180_1']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -1426,6 +1436,7 @@ class Crowd_shoppingController extends Controller{
                     
                     $off = 0;
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_2'] = intval($rts['ticheng180_2_1']*$rts['ticheng180_2_2']/100);
                             if($rts['ticheng180_2'] < 101 && $rts['ticheng180_2'] > 0){
                                 $off = $rts['ticheng180_2']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -1476,11 +1487,14 @@ class Crowd_shoppingController extends Controller{
                     $off = 0;
 
                         if($rank=='12'){ //普通分销商
-                            if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
-                                $off = $rts['ticheng180_3']/100;
-                                if(!empty($moneys))foreach($moneys as $row){
-                                    if($row['takemoney1'] > 0){
-                                        $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                            if( floatval($rts['person_accumulative_money']) > 0 && floatval($fPersonSum) >= floatval($rts['person_accumulative_money']) ){
+                                $rts['ticheng180_3'] = intval($rts['ticheng180_3_1']*$rts['ticheng180_3_2']/100);
+                                if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
+                                    $off = $rts['ticheng180_3']/100;
+                                    if(!empty($moneys))foreach($moneys as $row){
+                                        if($row['takemoney1'] > 0){
+                                            $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                        }
                                     }
                                 }
                             }
@@ -1511,8 +1525,38 @@ class Crowd_shoppingController extends Controller{
                         $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid3));
                     }
                 }
-            }//end if
-            
+            }//end if uid3
+
+            $moeys = 0;
+            //四级返佣金
+            if($parent_uid4 > 0){
+                $sql = "SELECT user_rank FROM `{$this->App->prefix()}user` WHERE user_id='$parent_uid4' LIMIT 1";
+                $rank = $this->App->findvar($sql);
+                if($rank != '1'){ //不是普通会员
+                    $off = 0;
+                    if($rank=='12'){ //普通分销商
+                        if( floatval($rts['team_accumulative_money']) > 0 && floatval($fTeamSum) >= floatval($rts['team_accumulative_money']) ){
+                            $rts['ticheng180_4'] = intval($rts['ticheng180_4_1']*$rts['ticheng180_4_2']/100);
+                            if($rts['ticheng180_4'] < 101 && $rts['ticheng180_4'] > 0){
+                            $off = $rts['ticheng180_4']/100;
+                            if(!empty($moneys))
+                                foreach($moneys as $row){
+                                    if($row['takemoney1'] > 0){
+                                        $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if($moeys > 0) $moeys = format_price($moeys);
+                    if(!empty($moeys)){
+                        $thismonth = date('Y-m-d',mktime());
+                        $thism = date('Y-m',mktime());
+                        $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid4));
+                    }
+                }
+            }//end of if uid4     
         }
         
     }

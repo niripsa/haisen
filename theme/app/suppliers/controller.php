@@ -1448,8 +1448,28 @@ class SuppliersController extends Controller{
    		if(empty($id) || empty($op)) die("传送ID为空！");
 		if($op=="cancel_order")
 			$this->App->update('goods_order_info',array('order_status'=>'1'),'order_id',$id);
-		else if($op=="confirm")
-			$this->App->update('goods_order_info',array('shipping_status'=>'5'),'order_id',$id);
+		else if($op=="confirm"){
+			$bIsSuccess = $this->App->update('goods_order_info',array('shipping_status'=>'5'),'order_id',$id);
+			
+			if($bIsSuccess){
+                $field = 'user_id,order_amount';
+                $sql = "SELECT {$field} FROM `{$this->App->prefix()}goods_order_info` WHERE order_id = '$id' LIMIT 1";
+                $aOrderInfo = $this->App->findrow( $sql );
+                //将本订单信息积累到gz_user表
+                $sNow = date('Y');
+                $iUserId = intval($aOrderInfo['user_id']);
+                $fPersonBuySum = floatval($aOrderInfo['order_amount']);
+
+                if(!empty($iUserId)){
+                    $sql = "update `gz_user` set `person_buy_sum` = `person_buy_sum` + {$fPersonBuySum} where `user_id` = {$iUserId} and `person_buy_year` = '{$sNow}'";
+                    $iAffectedRows = $this->App->query($sql);
+                    if(empty($iAffectedRows)){
+                        $sql = "update `gz_user` set `person_buy_sum` = {$fPersonBuySum}, `person_buy_year` = '{$sNow}'  where `user_id` = {$iUserId}";
+                        $this->App->query($sql);
+                    }
+                }
+            }
+		}
    }
    
    //商品上下架

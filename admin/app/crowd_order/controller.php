@@ -564,17 +564,31 @@ class Crowd_orderController extends Controller
             $parent_uid3 = isset($pu['parent_uid3']) ? $pu['parent_uid3'] : 0; //分享者
             $user_id = isset($pu['user_id']) ? $pu['user_id'] : 0; //分享者
             if($parent_uid>0){
-                $sql = "SELECT p1_uid,p2_uid,p3_uid FROM `{$this->App->prefix()}user_tuijian_fx` WHERE uid = '$parent_uid'";
+                $sql = "SELECT p1_uid,p2_uid,p3_uid,p4_uid FROM `{$this->App->prefix()}user_tuijian_fx` WHERE uid = '$parent_uid'";
                 $rr = $this->App->findrow($sql);
                 if($parent_uid==$user_id){
                     $parent_uid = isset($rr['p1_uid']) ? $rr['p1_uid'] : 0; //分享者
                     $parent_uid2 = isset($rr['p2_uid']) ? $rr['p2_uid'] : 0; //分享者
                     $parent_uid3 = isset($rr['p3_uid']) ? $rr['p3_uid'] : 0; //分享者
+                    $parent_uid4 = isset($rr['p4_uid']) ? $rr['p4_uid'] : 0; //分享者
                 }else{
                     $parent_uid2 = isset($rr['p1_uid']) ? $rr['p1_uid'] : 0; //分享者
                     $parent_uid3 = isset($rr['p2_uid']) ? $rr['p2_uid'] : 0; //分享者
+                    $parent_uid4 = isset($rr['p3_uid']) ? $rr['p3_uid'] : 0; //分享者
                 }
+            }
+
+            if(empty($parent_uid4)){
+                $parent_uid4 = $this->return_daili_uid($parent_uid3);
             }   
+
+            $aParentIds = array($parent_uid, $parent_uid2, $parent_uid3, $parent_uid4);
+            $sTeamIds = implode(',', $aParentIds);
+            //获取四人的团队积累和
+            $fTeamSum = $this->App->findvar("SELECT sum(person_buy_sum) as team_sum FROM `{$this->App->prefix()}user` WHERE user_id in ($sTeamIds) LIMIT 1");
+            //获得第三级的个人积累
+            $fPersonSum = $this->App->findvar("SELECT person_buy_sum FROM `{$this->App->prefix()}user` WHERE user_id = {$parent_uid3} LIMIT 1");
+
             $daili_uid = isset($pu['daili_uid']) ? $pu['daili_uid'] : 0; //代理
             $moeys = isset($pu['order_amount']) ? $pu['order_amount'] : 0; //实际消费
             $uid = isset($pu['user_id']) ? $pu['user_id'] : 0;
@@ -617,12 +631,8 @@ class Crowd_orderController extends Controller
                     $types = $this->App->findvar($sql);
                     
                     $off = 0;
-/*                  if($types=='1'){ //全职
-                        if($rts['ticheng360_1'] < 101 && $rts['ticheng360_1'] > 0){
-                            $off = $rts['ticheng360_1']/100;
-                        }
-                    }else{*/
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_1'] = intval($rts['ticheng180_1_1']*$rts['ticheng180_1_2']/100);
                             if($rts['ticheng180_1'] < 101 && $rts['ticheng180_1'] > 0){
                                 $off = $rts['ticheng180_1']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -689,6 +699,7 @@ class Crowd_orderController extends Controller
                         }
                     }else{*/
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_2'] = intval($rts['ticheng180_2_1']*$rts['ticheng180_2_2']/100);
                             if($rts['ticheng180_2'] < 101 && $rts['ticheng180_2'] > 0){
                                 $off = $rts['ticheng180_2']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -747,17 +758,15 @@ class Crowd_orderController extends Controller
                     $types = $this->App->findvar($sql);
                     
                     $off = 0;
-/*                  if($types=='1'){ //全职
-                        if($rts['ticheng360_3'] < 101 && $rts['ticheng360_3'] > 0){
-                            $off = $rts['ticheng360_3']/100;
-                        }
-                    }else{*/
                         if($rank=='12'){ //普通分销商
-                            if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
-                                $off = $rts['ticheng180_3']/100;
-                                if(!empty($moneys))foreach($moneys as $row){
-                                    if($row['takemoney1'] > 0){
-                                        $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                            if( floatval($rts['person_accumulative_money']) > 0 && floatval($fPersonSum) >= floatval($rts['person_accumulative_money']) ){
+                                $rts['ticheng180_3'] = intval($rts['ticheng180_3_1']*$rts['ticheng180_3_2']/100);
+                                if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
+                                    $off = $rts['ticheng180_3']/100;
+                                    if(!empty($moneys))foreach($moneys as $row){
+                                        if($row['takemoney1'] > 0){
+                                            $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                        }
                                     }
                                 }
                             }
@@ -797,15 +806,81 @@ class Crowd_orderController extends Controller
                         $this->action('api','send',array('openid'=>$pwecha_id,'appid'=>$appid,'appsecret'=>$appsecret,'nickname'=>$nickname),'payreturnmoney');
                     }
                 }
+            }//end of if uid3
+
+            $moeys = 0;
+            //四级返佣金
+            if($parent_uid4 > 0){
+                $sql = "SELECT user_rank FROM `{$this->App->prefix()}user` WHERE user_id='$parent_uid4' LIMIT 1";
+                $off = 0;
+                $rank = $this->App->findvar($sql);
+                if($rank=='12'){ //普通分销商
+                    if( floatval($rts['team_accumulative_money']) > 0 && floatval($fTeamSum) >= floatval($rts['team_accumulative_money']) ){
+                        $rts['ticheng180_4'] = intval($rts['ticheng180_4_1']*$rts['ticheng180_4_2']/100);
+                        if($rts['ticheng180_4'] < 101 && $rts['ticheng180_4'] > 0){
+                            $off = $rts['ticheng180_4']/100;
+                            if(!empty($moneys))foreach($moneys as $row){
+                                if($row['takemoney1'] > 0){
+                                    $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                }
+                            }
+                        }
+
+                        if(!empty($moeys)){
+                            $record['puid4_money'] = $moeys;
+                            $record['p_uid4'] = $parent_uid4;
+                            $thismonth = date('Y-m-d',mktime());
+                            $thism = date('Y-m',mktime());
+                            $sql = "UPDATE `{$this->App->prefix()}user` SET `money_ucount` = `money_ucount`+$moeys,`mymoney` = `mymoney`+$moeys WHERE user_id = '$parent_uid4'";
+                            $this->App->query($sql);
+                            $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid4));
+                            
+                            //发送推荐用户通知
+                            $pwecha_id = $this->App->findvar("SELECT wecha_id FROM `{$this->App->prefix()}user` WHERE user_id='$parent_uid4' LIMIT 1");
+                            $this->action('api','send',array('openid'=>$pwecha_id,'appid'=>$appid,'appsecret'=>$appsecret,'nickname'=>$nickname),'payreturnmoney');
+                        }
+                    }
+                }
+            }//end of if uid4
+
+            if(!empty($record)){
+                $record['oid'] = $order_id;
+                $record['uid'] = $uid;
+                $record['date_y'] = date('Y',mktime());
+                $record['date_m'] = date('Y-m',mktime());
+                $record['date_d'] = date('Y-m-d',mktime());
+                $this->App->insert('user_money_record',$record);
             }
-                 
+
+
               }
             }// userbonus end
                 
             }elseif($datas['pay_status'] == '1'){
                 $datas['pay_time'] = time();
             }
-            $this->App->update('crowd_goods_order_info',$datas,'order_id',$data['opid']); //更新状态
+            $bIsSuccess = $this->App->update('crowd_goods_order_info',$datas,'order_id',$data['opid']); //更新状态
+
+            if($bIsSuccess && !empty($datas['shipping_time'])){
+                //更新个人积累
+                $field = 'user_id,order_amount';
+                $id = intval($data['opid']);
+                $sql = "SELECT {$field} FROM `{$this->App->prefix()}crowd_goods_order_info` WHERE order_id = '$id' LIMIT 1";
+                $aOrderInfo = $this->App->findrow( $sql );
+                $sNow = date('Y');
+                $iUserId = intval($aOrderInfo['user_id']);
+                $fPersonBuySum = floatval($aOrderInfo['order_amount']);
+
+                if(!empty($iUserId)){
+                    $sql = "update `gz_user` set `person_buy_sum` = `person_buy_sum` + {$fPersonBuySum} where `user_id` = {$iUserId} and `person_buy_year` = '{$sNow}'";
+                    $iAffectedRows = $this->App->query($sql);
+                    if(empty($iAffectedRows)){
+                        $sql = "update `gz_user` set `person_buy_sum` = {$fPersonBuySum}, `person_buy_year` = '{$sNow}'  where `user_id` = {$iUserId}";
+                        $this->App->query($sql);
+                    }
+                }
+            }//end of if
+
             $datas['order_id'] = $data['opid'];
             $datas['action_note'] = !empty($data['opremark']) ? $data['opremark'] : "---";
             $datas['log_time'] = mktime();
@@ -887,11 +962,25 @@ class Crowd_orderController extends Controller
                     $parent_uid = isset($rr['p1_uid']) ? $rr['p1_uid'] : 0; //分享者
                     $parent_uid2 = isset($rr['p2_uid']) ? $rr['p2_uid'] : 0; //分享者
                     $parent_uid3 = isset($rr['p3_uid']) ? $rr['p3_uid'] : 0; //分享者
+                    $parent_uid4 = isset($rr['p4_uid']) ? $rr['p4_uid'] : 0; //分享者
                 }else{
                     $parent_uid2 = isset($rr['p1_uid']) ? $rr['p1_uid'] : 0; //分享者
                     $parent_uid3 = isset($rr['p2_uid']) ? $rr['p2_uid'] : 0; //分享者
+                    $parent_uid4 = isset($rr['p3_uid']) ? $rr['p3_uid'] : 0; //分享者
                 }
             }
+
+            if(empty($parent_uid4)){
+                $parent_uid4 = $this->return_daili_uid($parent_uid3);
+            }   
+
+            $aParentIds = array($parent_uid, $parent_uid2, $parent_uid3, $parent_uid4);
+            $sTeamIds = implode(',', $aParentIds);
+            //获取四人的团队积累和
+            $fTeamSum = $this->App->findvar("SELECT sum(person_buy_sum) as team_sum FROM `{$this->App->prefix()}user` WHERE user_id in ($sTeamIds) LIMIT 1");
+            //获得第三级的个人积累
+            $fPersonSum = $this->App->findvar("SELECT person_buy_sum FROM `{$this->App->prefix()}user` WHERE user_id = {$parent_uid3} LIMIT 1");
+
             
             $daili_uid = isset($pu['daili_uid']) ? $pu['daili_uid'] : 0; //代理
             $moeys = isset($pu['order_amount']) ? $pu['order_amount'] : 0; //实际消费
@@ -944,6 +1033,7 @@ class Crowd_orderController extends Controller
                     
                     $off = 0;
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_1'] = intval($rts['ticheng180_1_1']*$rts['ticheng180_1_2']/100);
                             if($rts['ticheng180_1'] < 101 && $rts['ticheng180_1'] > 0){
                                 $off = $rts['ticheng180_1']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -999,6 +1089,7 @@ class Crowd_orderController extends Controller
                     
                     $off = 0;
                         if($rank=='12'){ //普通分销商
+                            $rts['ticheng180_2'] = intval($rts['ticheng180_2_1']*$rts['ticheng180_2_2']/100);
                             if($rts['ticheng180_2'] < 101 && $rts['ticheng180_2'] > 0){
                                 $off = $rts['ticheng180_2']/100;
                                 if(!empty($moneys))foreach($moneys as $row){
@@ -1052,14 +1143,17 @@ class Crowd_orderController extends Controller
                     
                     $off = 0;
                         if($rank=='12'){ //普通分销商
-                            if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
-                                $off = $rts['ticheng180_3']/100;
-                                if(!empty($moneys))foreach($moneys as $row){
-                                    if($row['takemoney1'] > 0){
-                                        $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                            if( floatval($rts['person_accumulative_money']) > 0 && floatval($fPersonSum) >= floatval($rts['person_accumulative_money']) ){
+                                    $rts['ticheng180_3'] = intval($rts['ticheng180_3_1']*$rts['ticheng180_3_2']/100);
+                                    if($rts['ticheng180_3'] < 101 && $rts['ticheng180_3'] > 0){
+                                        $off = $rts['ticheng180_3']/100;
+                                        if(!empty($moneys))foreach($moneys as $row){
+                                            if($row['takemoney1'] > 0){
+                                                $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                            }
+                                        }
                                     }
                                 }
-                            }
                         }elseif($rank=='11'){//高级分销商
                             if($rts['ticheng180_h1_3'] < 101 && $rts['ticheng180_h1_3'] > 0){
                                 $off = $rts['ticheng180_h1_3']/100;
@@ -1092,7 +1186,42 @@ class Crowd_orderController extends Controller
                         $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid3));
                     }
                 }
-            }
+            }//end of if uid3
+
+            $moeys = 0;
+            //四级返佣金
+            if($parent_uid4 > 0){
+                $sql = "SELECT user_rank FROM `{$this->App->prefix()}user` WHERE user_id='$parent_uid4' LIMIT 1";
+                $off = 0;
+                $rank = $this->App->findvar($sql);
+                if($rank=='12'){ //普通分销商
+                    if( floatval($rts['team_accumulative_money']) > 0 && floatval($fTeamSum) >= floatval($rts['team_accumulative_money']) ){
+                        $rts['ticheng180_4'] = intval($rts['ticheng180_4_1']*$rts['ticheng180_4_2']/100);
+                        if($rts['ticheng180_4'] < 101 && $rts['ticheng180_4'] > 0){
+                            $off = $rts['ticheng180_4']/100;
+                            if(!empty($moneys))foreach($moneys as $row){
+                                if($row['takemoney1'] > 0){
+                                    $moeys +=$row['takemoney1'] * $row['goods_number'] * $off;
+                                }
+                            }
+                        }
+
+                        if(!empty($moeys)){
+                            $record['puid4_money'] = $moeys;
+                            $record['p_uid4'] = $parent_uid4;
+                            $thismonth = date('Y-m-d',mktime());
+                            $thism = date('Y-m',mktime());
+                            $sql = "UPDATE `{$this->App->prefix()}user` SET `money_ucount` = `money_ucount`+$moeys,`mymoney` = `mymoney`+$moeys WHERE user_id = '$parent_uid4'";
+                            $this->App->query($sql);
+                            $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid4));
+                            
+                            //发送推荐用户通知
+                            $pwecha_id = $this->App->findvar("SELECT wecha_id FROM `{$this->App->prefix()}user` WHERE user_id='$parent_uid4' LIMIT 1");
+                            $this->action('api','send',array('openid'=>$pwecha_id,'appid'=>$appid,'appsecret'=>$appsecret,'nickname'=>$nickname),'payreturnmoney');
+                        }
+                    }
+                }
+            }//end of if uid4
             
             if(!empty($record)){
                 $record['oid'] = $order_id;
@@ -1102,7 +1231,6 @@ class Crowd_orderController extends Controller
                 $record['date_d'] = date('Y-m-d',mktime());
                 $this->App->insert('user_money_record',$record);
             }
-            
         }//end if
     }//end function
     
@@ -1424,6 +1552,28 @@ class Crowd_orderController extends Controller
             $this->set('rt',$rt);
             $this->template('delivery_area_list');
         }
+
+    public function return_daili_uid($uid=0,$k=0){
+        if(!($uid > 0)){
+            return 0;
+        }
+        $puid = 0;
+        //for($i=0;$i<20;$i++){
+        if($k<20){
+                $sql = "SELECT parent_uid FROM `{$this->App->prefix()}user_tuijian` WHERE uid = '$uid' LIMIT 1";
+                $puid = $this->App->findvar($sql);
+                $sql = "SELECT user_rank FROM `{$this->App->prefix()}user` WHERE user_id = '$puid' LIMIT 1";
+                $rank = $this->App->findvar($sql);
+                if($rank == '1'){
+                    ++$k;
+                    $this->return_daili_uid($puid,$k);
+                }else{
+                    return $puid;
+                }
+        }
+        //}
+        return $puid;
+    }
         
 /***************  look添加 开始    *************************************************************************/       
 //产品总销量

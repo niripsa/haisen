@@ -40,9 +40,10 @@
                 <input type="text" name="takemoney" id="takemoney" size="8" value="<?php echo isset($rt['takemoney']) ? $rt['takemoney'] : '0.00'; ?>">元
                 <div style="height:70px; width:110px; position:absolute; top:25px; left:42px; z-index:99; background:#ededed; border:1px solid #e4e4e4; display:none">
                 <p style="line-height:21px; padding:5px; margin:0px;">
-                 一层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_1']) ? $userconfig['ticheng180_1'] : '0';?></b>&nbsp;&nbsp;%<br/>
-                 二层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_2']) ? $userconfig['ticheng180_2'] : '0';?></b>&nbsp;&nbsp;%<br/>
-                 三层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_3']) ? $userconfig['ticheng180_3'] : '0';?></b>&nbsp;&nbsp;%<br/>
+                 一层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_1_1'])&&isset($userconfig['ticheng180_1_2']) ? $userconfig['ticheng180_1_1'] . '%*' . $userconfig['ticheng180_1_2'] . '%' : '0';?></b>&nbsp;&nbsp;<br/>
+                 二层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_2_1'])&&isset($userconfig['ticheng180_2_2']) ? $userconfig['ticheng180_2_1'] . '%*' . $userconfig['ticheng180_2_2'] . '%' : '0';?></b>&nbsp;&nbsp;<br/>
+                 三层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_3_1'])&&isset($userconfig['ticheng180_3_2']) ? $userconfig['ticheng180_3_1'] . '%*' . $userconfig['ticheng180_3_2']  . '%' : '0';?></b>(个人累积达到<?php echo $userconfig['person_accumulative_money'];?>元，达不到，则无佣金)<br/>
+                 四层分佣&nbsp;&nbsp;<b><?php echo isset($userconfig['ticheng180_4_1'])&&isset($userconfig['ticheng180_4_2']) ? $userconfig['ticheng180_4_1'] . '%*' . $userconfig['ticheng180_4_2']  . '%' : '0';?></b>(团队累积达到<?php echo $userconfig['team_accumulative_money'];?>元，达不到，则无佣金)<br/>
                 </p>
                 </div>
             </li>

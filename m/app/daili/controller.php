@@ -1364,6 +1364,107 @@ class DailiController extends Controller
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
         $this->template($mb.'/v2_myusertype');
     }
+
+    public function buysum(){
+        defined('NAVNAME') or define('NAVNAME', "消费积累");
+        $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
+        $this->template($mb.'/buysum_record');
+    }
+
+    //个人消费积累信息展示
+    public function person_buy(){
+        $iUserId = $this->Session->read('User.uid');
+        if(empty($iUserId)){
+            exit;
+        }
+
+        //取出个人积累总额
+        $fPersonBuySum = $this->App->findvar("SELECT `person_buy_sum` FROM `{$this->App->prefix()}user` WHERE user_id='$iUserId' LIMIT 1");
+        $fPersonBuySum = floatval($fPersonBuySum);
+
+        //取出三级参与分成所需要的配置总额
+        $sql ="Select * From `{$this->App->prefix()}userconfig` LIMIT 1";
+        $aConfigInfo = $this->App->findrow($sql);
+        $fNeedSum = 0;
+        if(!empty($aConfigInfo['person_accumulative_money'])){
+            $fNeedSum = floatval($aConfigInfo['person_accumulative_money']);
+        }
+
+        $fDiff = 0;
+        if($fNeedSum > $fPersonBuySum){
+            $fDiff = $fNeedSum - $fPersonBuySum;
+        }
+
+        $fThird1 = floatval($aConfigInfo['ticheng180_3_1']);
+        $fThird2 = floatval($aConfigInfo['ticheng180_3_2']);
+
+        $this->set('person_buy_sum',$fPersonBuySum);
+        $this->set('need_sum', $fNeedSum);
+        $this->set('diff', $fDiff);
+        $this->set('desc', "满{$fNeedSum}元可参与三级分成{$fThird1}%*{$fThird2}%");
+
+        defined('NAVNAME') or define('NAVNAME', "个人消费积累");
+        $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
+        $this->template($mb.'/buy_display');
+    }
+
+    //团队消费积累信息展示
+    public function team_buy(){
+        $iUserId = $this->Session->read('User.uid');
+        if(empty($iUserId)){
+            exit;
+        }
+
+        //取出四级参与分成所需要的团体配置总额
+        $sql ="Select * From `{$this->App->prefix()}userconfig` LIMIT 1";
+        $aConfigInfo = $this->App->findrow($sql);
+        $fNeedSum = 0;
+        if(!empty($aConfigInfo['team_accumulative_money'])){
+            $fNeedSum = floatval($aConfigInfo['team_accumulative_money']);
+        }
+
+        //去user_tuijian表中取parent_uid3 = $iUserId的所有信息
+        $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+        $page = $page ? : 1;
+        $list = 3;
+
+        $sSql = "select count(1) from `{$this->App->prefix()}user_tuijian_fx` where p3_uid={$iUserId}";
+        $tt = intval($this->App->findvar($sSql)); // 获取链条的数量
+        $rt['team_count']         = $tt;        
+        $rt['teampage']           = Import::basic()->getpage($tt, $list, $page, '?page=', true);     
+
+        $start = ($page-1)*$list;
+        $sql = "SELECT `uid`,`p1_uid`,`p2_uid`,`p3_uid` FROM `{$this->App->prefix()}user_tuijian_fx` where `p3_uid` = {$iUserId} ";
+        $sql .=" ORDER BY  `addtime` DESC LIMIT $start,$list";
+        $teamlist = $this->App->find($sql);   
+        if(!empty($teamlist)){
+            foreach($teamlist as $k=>$row){
+                $aIds = array(intval($row['uid']), intval($row['p1_uid']), intval($row['p2_uid']), intval($row['p3_uid']));
+                $sTeamIds = implode(',', $aIds);
+                //获取四人的团队积累和
+                $fTeamSum = $this->App->findvar("SELECT sum(person_buy_sum) as team_sum FROM `{$this->App->prefix()}user` WHERE user_id in ($sTeamIds) LIMIT 1");
+                $fDiff = 0;
+                if($fNeedSum > $fTeamSum){
+                    $fDiff = $fNeedSum - $fTeamSum;
+                }
+                $teamlist[$k]['team_members'] = implode("->", array_reverse($aIds));
+                $teamlist[$k]['team_sum'] = $fTeamSum;
+                $teamlist[$k]['diff'] = $fDiff;
+            }
+        }
+
+        $fFourth1 = floatval($aConfigInfo['ticheng180_4_1']);
+        $fFourth2 = floatval($aConfigInfo['ticheng180_4_2']);
+
+        $this->set('rt',$rt);
+        $this->set('teamlist',$teamlist);
+        $this->set('need_sum', $fNeedSum);
+        $this->set('desc', "满{$fNeedSum}元可参与四级分成{$fFourth1}%*{$fFourth2}%");
+
+        defined('NAVNAME') or define('NAVNAME', "团队消费积累");
+        $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
+        $this->template($mb.'/team_buy_display');
+    }
     
     //我的分享
     public function myshare(){
@@ -1755,8 +1856,27 @@ class DailiController extends Controller
         if(empty($id) || empty($op)) die("传送ID为空！");
         if($op=="cancel_order")
             $this->App->update('goods_order_info',array('order_status'=>'1'),'order_id',$id);
-        else if($op=="confirm")
-            $this->App->update('goods_order_info',array('shipping_status'=>'5'),'order_id',$id);
+        else if($op=="confirm"){
+            $bIsSuccess = $this->App->update('goods_order_info',array('shipping_status'=>'5'),'order_id',$id);
+            if($bIsSuccess){
+                $field = 'user_id,order_amount';
+                $sql = "SELECT {$field} FROM `{$this->App->prefix()}goods_order_info` WHERE order_id = '$id' LIMIT 1";
+                $aOrderInfo = $this->App->findrow( $sql );
+                //将本订单信息积累到gz_user表
+                $sNow = date('Y');
+                $iUserId = intval($aOrderInfo['user_id']);
+                $fPersonBuySum = floatval($aOrderInfo['order_amount']);
+
+                if(!empty($iUserId)){
+                    $sql = "update `gz_user` set `person_buy_sum` = `person_buy_sum` + {$fPersonBuySum} where `user_id` = {$iUserId} and `person_buy_year` = '{$sNow}'";
+                    $iAffectedRows = $this->App->query($sql);
+                    if(empty($iAffectedRows)){
+                        $sql = "update `gz_user` set `person_buy_sum` = {$fPersonBuySum}, `person_buy_year` = '{$sNow}'  where `user_id` = {$iUserId}";
+                        $this->App->query($sql);
+                    }
+                }
+            }
+        }
    }
    
    //我的余额

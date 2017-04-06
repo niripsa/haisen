@@ -73,6 +73,9 @@ border-radius:5px;/*仅Opera，Safari,Chrome支持，实现圆角效果*/
         <li class="li4">
             <a href="<?php echo ADMIN_URL.'daili.php?act=v2_mymoney';?>"><i></i>我的佣金</a>
         </li>
+        <li class="li99">
+            <a href="<?php echo ADMIN_URL.'daili.php?act=buysum';?>"><i style="background: url(/m/tpl/25/images/buysum.png) no-repeat;background-size: 100% 100%;"></i>消费积累</a>
+        </li>
         
 <!--        <li class="li6">
             <a href="<?php echo ADMIN_URL.'daili.php?act=kehuorder';?>">客户订单</a>
