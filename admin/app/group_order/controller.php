@@ -543,7 +543,27 @@ class Group_orderController extends Controller
             $datas['pay_time'] = time();
         }
 
-        $this->App->update( 'group_goods_order_info', $datas, 'order_id', $data['opid'] ); // 更新状态
+        $bIsSuccess = $this->App->update( 'group_goods_order_info', $datas, 'order_id', $data['opid'] ); // 更新状态
+        if($bIsSuccess && !empty($datas['shipping_time'])){
+            //更新个人积累
+            $field = 'user_id,order_amount';
+            $id = intval($data['opid']);
+            $sql = "SELECT {$field} FROM `{$this->App->prefix()}group_goods_order_info` WHERE order_id = '$id' LIMIT 1";
+            $aOrderInfo = $this->App->findrow( $sql );
+            $sNow = date('Y');
+            $iUserId = intval($aOrderInfo['user_id']);
+            $fPersonBuySum = floatval($aOrderInfo['order_amount']);
+
+            if(!empty($iUserId)){
+                $sql = "update `gz_user` set `person_buy_sum` = `person_buy_sum` + {$fPersonBuySum} where `user_id` = {$iUserId} and `person_buy_year` = '{$sNow}'";
+                $iAffectedRows = $this->App->query($sql);
+                if(empty($iAffectedRows)){
+                    $sql = "update `gz_user` set `person_buy_sum` = {$fPersonBuySum}, `person_buy_year` = '{$sNow}'  where `user_id` = {$iUserId}";
+                    $this->App->query($sql);
+                }
+            }
+        }//end of if
+
         $datas['order_id']    = $data['opid'];
         $datas['action_note'] = ! empty($data['opremark']) ? $data['opremark'] : "---";
         $datas['log_time']    = time();
