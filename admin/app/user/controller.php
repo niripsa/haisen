@@ -772,51 +772,68 @@ class UserController extends Controller
     
     public function update_daili_tree($uid=0){
         if($uid>0){
-            //for($i=0;$i<100;$i++){
-                $dd = array();
-                $ss = array();
-                $ss[] = $uid;
-                $dd['uid'] = $uid;
-                $dd['p1_uid'] = 0;
-                $dd['p2_uid'] = 0;
-                $dd['p3_uid'] = 0;
-                
-                $p1_uid = $this->return_daili_uid($uid);
+            $dd = array();
+            $ss = array();
+            $ss[] = $uid;
+            $dd['uid'] = $uid;
+            $dd['p1_uid'] = 0;
+            $dd['p2_uid'] = 0;
+            $dd['p3_uid'] = 0;
             
-                if($p1_uid > 0 && !in_array($p1_uid,$ss)){
-                    $dd['p1_uid'] = $p1_uid;
-                    //$sql = "SELECT daili_uid FROM `{$this->App->prefix()}user_tuijian` WHERE uid = '$p1_uid' LIMIT 1";
-                    //$p2_uid = $this->App->findvar($sql);
-                    $p2_uid = $this->return_daili_uid($p1_uid);
-                    $ss[] = $p1_uid;
-                    $ss[] = $uid;
-                    if($p2_uid > 0 && !in_array($p2_uid,$ss)){
-                        $dd['p2_uid'] = $p2_uid;
-                        //$sql = "SELECT daili_uid FROM `{$this->App->prefix()}user_tuijian` WHERE uid = '$p2_uid' LIMIT 1";
-                        //$p3_uid = $this->App->findvar($sql);
-                        $p3_uid = $this->return_daili_uid($p2_uid);
-                        $ss[] = $p2_uid;
-                        if($p3_uid > 0 && !in_array($p3_uid,$ss)){
-                            $dd['p3_uid'] = $p3_uid;
-                            $ss[] = $p3_uid;
-                            $p4_uid = $this->return_daili_uid($p3_uid);
-                            if($p4_uid > 0 && !in_array($p4_uid,$ss)){
-                                $dd['p4_uid'] = $p4_uid;
-                                $ss[] = $p4_uid;
-                            }
+            $p1_uid = $this->return_daili_uid($uid);
+        
+            if($p1_uid > 0 && !in_array($p1_uid,$ss)){
+                $dd['p1_uid'] = $p1_uid;
+                $p2_uid = $this->return_daili_uid($p1_uid);
+                $ss[] = $p1_uid;
+                $ss[] = $uid;
+                if($p2_uid > 0 && !in_array($p2_uid,$ss)){
+                    $dd['p2_uid'] = $p2_uid;
+                    $p3_uid = $this->return_daili_uid($p2_uid);
+                    $ss[] = $p2_uid;
+                    if($p3_uid > 0 && !in_array($p3_uid,$ss)){
+                        $dd['p3_uid'] = $p3_uid;
+                        $ss[] = $p3_uid;
+                        $p4_uid = $this->return_daili_uid($p3_uid);
+                        if($p4_uid > 0 && !in_array($p4_uid,$ss)){
+                            $dd['p4_uid'] = $p4_uid;
+                            $ss[] = $p4_uid;
                         }
                     }
                 }
-                //
-                $sql = "SELECT id FROM `{$this->App->prefix()}user_tuijian_fx` WHERE uid='$uid' LIMIT 1";
-                $id = $this->App->findvar($sql);
-                
-                if($id > 0){
-                    $this->App->update('user_tuijian_fx',$dd,'id',$id);
-                }else{
-                    $this->App->insert('user_tuijian_fx',$dd);
-                }
-            //}
+            }
+            
+            $sql = "SELECT id FROM `{$this->App->prefix()}user_tuijian_fx` WHERE uid='$uid' LIMIT 1";
+            $id = $this->App->findvar($sql);
+            
+            if($id > 0){
+                $this->App->update('user_tuijian_fx',$dd,'id',$id);
+            }else{
+                $this->App->insert('user_tuijian_fx',$dd);
+            }
+
+            //$uid的下属都需要修改user_tuijian_fx的信息
+            $sql = "SELECT id FROM `{$this->App->prefix()}user_tuijian_fx` WHERE p1_uid='$uid'";
+            $aIdRows = $this->App->find($sql);
+            $aIds = [];
+            foreach ($aIdRows as $aOneRow) {
+                $aIds[] = intval($aOneRow['id']);
+            }
+            $sId = implode(",", $aIds);
+            $sUpdateSql = "update `{$this->App->prefix()}user_tuijian_fx` set p2_uid = {$p1_uid}, p3_uid={$p2_uid} where id in ({$sId})";
+            $bIsSuccess = $this->App->query($sUpdateSql);
+            $this->writeLog("update is sucess:" . $bIsSuccess . '| update sql:' . $sUpdateSql);
+
+            $sql = "SELECT id FROM `{$this->App->prefix()}user_tuijian_fx` WHERE p2_uid='$uid'";
+            $aIdRows = $this->App->find($sql);
+            $aIds = [];
+            foreach ($aIdRows as $aOneRow) {
+                $aIds[] = intval($aOneRow['id']);
+            }
+            $sId = implode(",", $aIds);
+            $sUpdateSql = "update `{$this->App->prefix()}user_tuijian_fx` set p3_uid={$p1_uid} where id in ({$sId})";
+            $bIsSuccess = $this->App->query($sUpdateSql);
+            $this->writeLog("update is sucess2:" . $bIsSuccess . '| update sql:' . $sUpdateSql);
         }
     }
     
