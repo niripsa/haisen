@@ -1415,7 +1415,7 @@ class Crowd_shoppingController extends Controller{
                         
                     //}
 
-                    
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
                     if($moeys > 0) $moeys = format_price($moeys);
                     if(!empty($moeys)){
                         $thismonth = date('Y-m-d',mktime());
@@ -1466,6 +1466,7 @@ class Crowd_shoppingController extends Controller{
                         }
                         
                     //}
+                        $this->writeLog(__FILE__ . "|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
                     if($moeys > 0) $moeys = format_price($moeys);
                     if(!empty($moeys)){
                         $thismonth = date('Y-m-d',mktime());
@@ -1517,7 +1518,8 @@ class Crowd_shoppingController extends Controller{
                                 }
                             }
                         }
-                        
+                    
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3);
                     if($moeys > 0) $moeys = format_price($moeys);
                     if(!empty($moeys)){
                         $thismonth = date('Y-m-d',mktime());
@@ -1549,6 +1551,7 @@ class Crowd_shoppingController extends Controller{
                         }
                     }
 
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
                     if($moeys > 0) $moeys = format_price($moeys);
                     if(!empty($moeys)){
                         $thismonth = date('Y-m-d',mktime());
@@ -1721,6 +1724,11 @@ class Crowd_shoppingController extends Controller{
             echo $total;
         }
         exit;
+    }
+
+    function writeLog($message){
+        $message = 'time: ' . date('Y-m-d H:i:s') . '|' . $message;
+        file_put_contents('/wwwroot/custom_fenxiao/huahai.log_' . date('Y-m-d'), $message . PHP_EOL, FILE_APPEND);
     }
     
     //ajax计算邮费

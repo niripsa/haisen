@@ -829,6 +829,8 @@ class ShoppingController extends Controller
                             }
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
                     
                     if ( $moeys > 0 ) $moeys = format_price($moeys);
                     if ( ! empty($moeys) ) {
@@ -911,7 +913,8 @@ class ShoppingController extends Controller
                             }
                         }
                     }
-                        
+                    
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
                     if ( $moeys > 0 ) 
                     {
                         $moeys = format_price($moeys);
@@ -997,7 +1000,7 @@ class ShoppingController extends Controller
                             }                            
                         }
                     }
-                        
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3);
                     if ( $moeys > 0 ) $moeys = format_price($moeys);
                     if ( ! empty( $moeys ) ) {
                         $record['puid3_money'] = $moeys;
@@ -1046,7 +1049,7 @@ class ShoppingController extends Controller
                             }
                         }
                     }
-
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
                     if ( $moeys > 0 ) $moeys = format_price($moeys);
                     if ( ! empty( $moeys ) ) {
                         $record['puid4_money'] = $moeys;
@@ -2788,6 +2791,8 @@ class ShoppingController extends Controller
                         }
                     }
 
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
+
                     if ( $moeys > 0 ) $moeys = format_price( $moeys );
                     if ( ! empty( $moeys ) )
                     {
@@ -2864,6 +2869,8 @@ class ShoppingController extends Controller
                             }                                
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
                         
                     if ( $moeys > 0 ) $moeys = format_price( $moeys );
                     if ( ! empty( $moeys ) ) {
@@ -2946,7 +2953,8 @@ class ShoppingController extends Controller
                             }                            
                         }
                     }
-                        
+                    
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3);
                     if ( $moeys > 0 ) $moeys = format_price( $moeys );
                     if ( ! empty( $moeys ) )
                     {
@@ -2988,7 +2996,7 @@ class ShoppingController extends Controller
                             }
                         }
                     }
-
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
                     if ( $moeys > 0 ) $moeys = format_price( $moeys );
                     if ( ! empty( $moeys ) )
                     {
@@ -3740,6 +3748,11 @@ class ShoppingController extends Controller
         $this->set('rt',$rt);
         $con = $this->fetch('ajax_mycart',true);
         die($con);
+    }
+
+    function writeLog($message){
+        $message = 'time: ' . date('Y-m-d H:i:s') . '|' . $message;
+        file_put_contents('/wwwroot/custom_fenxiao/huahai.log_' . date('Y-m-d'), $message . PHP_EOL, FILE_APPEND);
     }
 
     // 清空购物车

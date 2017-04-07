@@ -662,7 +662,7 @@ class Crowd_orderController extends Controller
                         }
                         
                     //}
-
+                        $this->writeLog(__FILE__ . "|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
                     
                     //if($moeys > 0) $moeys = format_price($moeys);
                     
@@ -731,7 +731,7 @@ class Crowd_orderController extends Controller
                     //}
     
                     //if($moeys > 0) $moeys = format_price($moeys);
-                    
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
                     if(!empty($moeys)){
                         $record['puid2_money'] = $moeys;
                         $record['p_uid2'] = $parent_uid2;
@@ -789,7 +789,7 @@ class Crowd_orderController extends Controller
                                 }
                             }
                         }
-                        
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3); 
                     //}
                     //if($moeys > 0) $moeys = format_price($moeys);
                     if(!empty($moeys)){
@@ -841,6 +841,8 @@ class Crowd_orderController extends Controller
                         }
                     }
                 }
+
+                $this->writeLog(__FILE__ . "|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
             }//end of if uid4
 
             if(!empty($record)){
@@ -1076,6 +1078,8 @@ class Crowd_orderController extends Controller
                         $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid));
                     }
                 }
+
+                $this->writeLog(__FILE__ . "|2|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
             }
             
             $moeys = 0;
@@ -1130,6 +1134,8 @@ class Crowd_orderController extends Controller
                         $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid2));
                     }
                 }
+
+                $this->writeLog(__FILE__ . "|2|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
             }
             
             $moeys = 0;
@@ -1186,6 +1192,8 @@ class Crowd_orderController extends Controller
                         $this->App->insert('user_money_change',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>mktime(),'uid'=>$parent_uid3));
                     }
                 }
+
+                $this->writeLog(__FILE__ . "|3|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3);
             }//end of if uid3
 
             $moeys = 0;
@@ -1221,6 +1229,8 @@ class Crowd_orderController extends Controller
                         }
                     }
                 }
+
+                $this->writeLog(__FILE__ . "|2|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
             }//end of if uid4
             
             if(!empty($record)){
@@ -1887,6 +1897,11 @@ class Crowd_orderController extends Controller
 
                }
                return array('status'=>$rts['takeover'],'count'=>$count);
+        }
+
+        function writeLog($message){
+            $message = 'time: ' . date('Y-m-d H:i:s') . '|' . $message;
+            file_put_contents('/wwwroot/custom_fenxiao/huahai.log_' . date('Y-m-d'), $message . PHP_EOL, FILE_APPEND);
         }
     
 }

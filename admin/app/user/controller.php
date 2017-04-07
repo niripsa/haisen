@@ -412,6 +412,7 @@ class UserController extends Controller
                         $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>$time,'uid'=>$parent_uid));
                     }
                 }
+                $this->writeLog(__FILE__ . "|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
             }
             
             $sql = "SELECT cid FROM `{$this->App->prefix()}user_money_change` WHERE order_sn='$order_sn' AND uid = '$parent_uid2' AND uid!='0'"; //资金
@@ -466,6 +467,7 @@ class UserController extends Controller
                         $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>$time,'uid'=>$parent_uid2));
                     }
                 }
+                $this->writeLog(__FILE__ . "|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
             }
             
             $sql = "SELECT cid FROM `{$this->App->prefix()}user_money_change` WHERE order_sn='$order_sn' AND uid = '$parent_uid3' AND uid!='0'"; //资金
@@ -522,6 +524,7 @@ class UserController extends Controller
                         $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>$time,'uid'=>$parent_uid3));
                     }
                 }
+                $this->writeLog(__FILE__ . "|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3);
             }//end of if uid3
 
              //四级返佣金
@@ -558,6 +561,7 @@ class UserController extends Controller
                         $this->App->insert('user_money_change_cache',array('buyuid'=>$uid,'order_sn'=>$order_sn,'thismonth'=>$thismonth,'thism'=>$thism,'money'=>$moeys,'changedesc'=>'购买商品返佣金','time'=>$time,'uid'=>$parent_uid4));
                     }
                 }
+                $this->writeLog(__FILE__ . "|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4);
             }//end of if uid4
         }
     }
@@ -737,6 +741,11 @@ class UserController extends Controller
             echo "2";
         }
         exit;
+    }
+
+    function writeLog($message){
+        $message = 'time: ' . date('Y-m-d H:i:s') . '|' . $message;
+        file_put_contents('/wwwroot/custom_fenxiao/huahai.log_' . date('Y-m-d'), $message . PHP_EOL, FILE_APPEND);
     }
     
     public function return_daili_uid($uid=0,$k=0){

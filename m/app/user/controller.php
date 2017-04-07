@@ -1863,9 +1863,11 @@ class UserController extends Controller
                                         $moeys += $row['takemoney1'] * $row['goods_number'] * $off;
                                     }
                                 }
-                            }                                            
+                            }                                 
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid);
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -1909,10 +1911,11 @@ class UserController extends Controller
                                     {
                                         $moeys += $row['takemoney1'] * $row['goods_number'] * $off;
                                     }
-                                }
+                                } 
                             }
                         }
                     }
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2);
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -1962,6 +1965,8 @@ class UserController extends Controller
                             }
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -2009,7 +2014,7 @@ class UserController extends Controller
                             }
                         }
                     }
-
+                    $this->writeLog(__FILE__ . "|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -2129,6 +2134,8 @@ class UserController extends Controller
                             }                                            
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 1 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -2176,6 +2183,8 @@ class UserController extends Controller
                             }
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 2 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid2); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -2219,6 +2228,8 @@ class UserController extends Controller
                             }
                         }
                     }
+
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 3 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid3); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -2266,7 +2277,7 @@ class UserController extends Controller
                             }
                         }
                     }
-
+                    $this->writeLog(__FILE__ . "|2|uid:{$uid}| 4 level | money:" . $moeys . "|ticheng:" . $off . '|rank:' . $rank . '|parent_id:' . $parent_uid4); 
                     if ( $moeys > 0 )
                     {
                         $moeys = format_price($moeys);
@@ -4567,6 +4578,11 @@ function choujiang()
         if(!defined(NAVNAME)) define('NAVNAME', "我的奖品");
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
         $this->template($mb.'/prize');
+    }
+
+    function writeLog($message){
+        $message = 'time: ' . date('Y-m-d H:i:s') . '|' . $message;
+        file_put_contents('/wwwroot/custom_fenxiao/huahai.log_' . date('Y-m-d'), $message . PHP_EOL, FILE_APPEND);
     }
 }
 ?>
