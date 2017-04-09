@@ -85,7 +85,7 @@ $( function() {
 
 <div class="yScrollList">
     <div class="yScrollListTitle">
-        <h1 class="yth1click">团体消费积累</h1>
+        <h1 class="yth1click">团体消费累积</h1>
     </div>
     <div class="yScrollListIn">
     <div class="yScrollListInList yScrollListInList1" style="display:block;">

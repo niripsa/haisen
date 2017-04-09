@@ -1401,7 +1401,7 @@ class DailiController extends Controller
         $this->set('person_buy_sum',$fPersonBuySum);
         $this->set('need_sum', $fNeedSum);
         $this->set('diff', $fDiff);
-        $this->set('desc', "满{$fNeedSum}元可参与三级分成{$fThird1}%*{$fThird2}%");
+        $this->set('desc', "个人额外奖励");
 
         defined('NAVNAME') or define('NAVNAME', "个人消费累积页面");
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
@@ -1448,7 +1448,11 @@ class DailiController extends Controller
                 if($fNeedSum > $fTeamSum){
                     $fDiff = $fNeedSum - $fTeamSum;
                 }
-                $teamlist[$k]['team_members'] = implode("->", array_reverse($aIds));
+
+                $p2_nickname = $this->App->findvar("SELECT nickname FROM `{$this->App->prefix()}user` WHERE user_id = '$p2_uid' LIMIT 1");
+                $p1_nickname = $this->App->findvar("SELECT nickname FROM `{$this->App->prefix()}user` WHERE user_id = '$p1_uid' LIMIT 1");
+
+                $teamlist[$k]['team_members'] = implode("->", array($p2_nickname, $p1_nickname));
                 $teamlist[$k]['team_sum'] = $fTeamSum;
                 $teamlist[$k]['diff'] = $fDiff;
             }
