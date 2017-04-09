@@ -1449,6 +1449,8 @@ class DailiController extends Controller
                     $fDiff = $fNeedSum - $fTeamSum;
                 }
 
+                $p2_uid = $row['p2_uid'];
+                $p1_uid = $row['p1_uid'];
                 $p2_nickname = $this->App->findvar("SELECT nickname FROM `{$this->App->prefix()}user` WHERE user_id = '$p2_uid' LIMIT 1");
                 $p1_nickname = $this->App->findvar("SELECT nickname FROM `{$this->App->prefix()}user` WHERE user_id = '$p1_uid' LIMIT 1");
 
