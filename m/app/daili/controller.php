@@ -1435,8 +1435,8 @@ class DailiController extends Controller
         $rt['teampage']           = Import::basic()->getpage($tt, $list, $page, '?page=', true);     
 
         $start = ($page-1)*$list;
-        $sql = "select a.uid as p3_uid,b.uid as p2_uid,c.uid as p1_uid,d.uid as uid from gz_user_tuijian a left join gz_user_tuijian b on a.uid = b.parent_uid left join gz_user_tuijian c on b.uid = c.parent_uid left join gz_user_tuijian d on c.uid = d.parent_uid where a.uid={$iUserId} and b.uid is not null and c.uid is not null and d.uid is not null";
-        $sql .=" ORDER BY  `d.addtime` DESC LIMIT $start,$list";
+        $sql = "select a.uid as p3_uid,b.uid as p2_uid,c.uid as p1_uid,d.uid as uid,d.addtime as addtime from gz_user_tuijian a left join gz_user_tuijian b on a.uid = b.parent_uid left join gz_user_tuijian c on b.uid = c.parent_uid left join gz_user_tuijian d on c.uid = d.parent_uid where a.uid={$iUserId} and b.uid is not null and c.uid is not null and d.uid is not null";
+        $sql .=" ORDER BY addtime DESC LIMIT $start,$list";
         $teamlist = $this->App->find($sql);   
         if(!empty($teamlist)){
             foreach($teamlist as $k=>$row){
