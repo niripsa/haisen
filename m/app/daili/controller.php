@@ -1366,7 +1366,7 @@ class DailiController extends Controller
     }
 
     public function buysum(){
-        defined('NAVNAME') or define('NAVNAME', "消费积累");
+        defined('NAVNAME') or define('NAVNAME', "消费累积");
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
         $this->template($mb.'/buysum_record');
     }

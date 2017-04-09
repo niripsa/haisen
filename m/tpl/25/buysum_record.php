@@ -13,12 +13,12 @@
     <ul class="dailicenter">
         <li>
             <a href="<?php echo ADMIN_URL.'daili.php?act=person_buy';?>"><i></i>
-                个人消费积累
+                个人消费累积
             </a>
         </li>
         <li>
             <a href="<?php echo ADMIN_URL.'daili.php?act=team_buy';?>"><i></i>
-                团队消费积累
+                团队消费累积
             </a>
         </li>
     </ul>
