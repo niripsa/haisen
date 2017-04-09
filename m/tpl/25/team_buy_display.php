@@ -98,11 +98,11 @@ $( function() {
       ?>
         <tr>
         <td style="border-bottom:1px solid #E0E0E0;  padding-right:10px">
-        <p style="color:#5286B7">本团体人员组成:<font color="#60ACDC"><?php echo $row['team_members'];?></font></p>
-        <p style="color:#5286B7">本团体消费总额:<font color="#60ACDC"><?php echo $row['team_sum'];?></font></p>
-        <p style="color:#5286B7">四级分成所需团体总额:<font color="#60ACDC"><?php echo $need_sum;?></font></p>
-        <p style="color:#5286B7">本团体仍需购买:<font color="#FF0000"><?php echo $row['diff'];?>元</font></p>
-        <p style="color:#5286B7">四级分成描述:<font color="#60ACDC"><?php echo $desc;?></font></p>
+        <p style="color:#5286B7">本团队人员组成:<font color="#60ACDC"><?php echo $row['team_members'];?></font></p>
+        <p style="color:#5286B7">本团队消费总额:<font color="#60ACDC"><?php echo $row['team_sum'];?></font></p>
+        <p style="color:#5286B7">奖励所需团队消费总额:<font color="#60ACDC"><?php echo $need_sum;?></font></p>
+        <p style="color:#5286B7">本团队仍需购买:<font color="#FF0000"><?php echo $row['diff'];?>元</font></p>
+        <p style="color:#5286B7">分成描述:<font color="#60ACDC"><?php echo $desc;?></font></p>
         </td>
       </tr>
       <?php } } ?>

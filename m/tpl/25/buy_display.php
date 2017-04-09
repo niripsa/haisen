@@ -93,10 +93,10 @@ $( function() {
      <table  width="100%" border="0" cellpadding="0" cellspacing="0" style="line-height:25px;  overflow:hidden">
         <tr>
         <td style="border-bottom:1px solid #E0E0E0;  padding-right:10px">
-        <p style="color:#5286B7">个人积累总额:<font color="#60ACDC"><?php echo $person_buy_sum;?>元</font></p>
-        <p style="color:#5286B7">三级分成所需总额:<font color="#60ACDC"><?php echo $need_sum;?>元</font></p>
+        <p style="color:#5286B7">个人消费总额:<font color="#60ACDC"><?php echo $person_buy_sum;?>元</font></p>
+        <p style="color:#5286B7">奖励所需消费总额:<font color="#60ACDC"><?php echo $need_sum;?>元</font></p>
         <p style="color:#5286B7">还需要继续购买:<font color="#FF0000"><?php echo $diff;?>元</font></p>
-        <p style="color:#5286B7">三级分成描述:<font color="#FF0000"><?php echo $desc;?></font></p>
+        <p style="color:#5286B7">分成描述:<font color="#FF0000"><?php echo $desc;?></font></p>
         <p>
         <div class="clear"></div>
         </p>

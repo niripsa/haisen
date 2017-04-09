@@ -1403,7 +1403,7 @@ class DailiController extends Controller
         $this->set('diff', $fDiff);
         $this->set('desc', "满{$fNeedSum}元可参与三级分成{$fThird1}%*{$fThird2}%");
 
-        defined('NAVNAME') or define('NAVNAME', "个人消费积累");
+        defined('NAVNAME') or define('NAVNAME', "个人消费累积页面");
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
         $this->template($mb.'/buy_display');
     }
@@ -1460,9 +1460,9 @@ class DailiController extends Controller
         $this->set('rt',$rt);
         $this->set('teamlist',$teamlist);
         $this->set('need_sum', $fNeedSum);
-        $this->set('desc', "满{$fNeedSum}元可参与四级分成{$fFourth1}%*{$fFourth2}%");
+        $this->set('desc', "团队额外奖励");
 
-        defined('NAVNAME') or define('NAVNAME', "团队消费积累");
+        defined('NAVNAME') or define('NAVNAME', "团队消费累积界面");
         $mb = $GLOBALS['LANG']['mubanid'] > 0 ? $GLOBALS['LANG']['mubanid'] : '';
         $this->template($mb.'/team_buy_display');
     }
