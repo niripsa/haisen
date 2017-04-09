@@ -1428,14 +1428,15 @@ class DailiController extends Controller
         $page = $page ? : 1;
         $list = 3;
 
-        $sSql = "select count(1) from `{$this->App->prefix()}user_tuijian_fx` where p3_uid={$iUserId}";
+        $sSql = "select count(1) from gz_user_tuijian a left join gz_user_tuijian b on a.uid = b.parent_uid left join gz_user_tuijian c on b.uid = c.parent_uid left join gz_user_tuijian d on c.uid = d.parent_uid where a.uid={$iUserId} and b.uid is not null and c.uid is not null and d.uid is not null";
+
         $tt = intval($this->App->findvar($sSql)); // 获取链条的数量
         $rt['team_count']         = $tt;        
         $rt['teampage']           = Import::basic()->getpage($tt, $list, $page, '?page=', true);     
 
         $start = ($page-1)*$list;
-        $sql = "SELECT `uid`,`p1_uid`,`p2_uid`,`p3_uid` FROM `{$this->App->prefix()}user_tuijian_fx` where `p3_uid` = {$iUserId} ";
-        $sql .=" ORDER BY  `addtime` DESC LIMIT $start,$list";
+        $sql = "select a.uid as p3_uid,b.uid as p2_uid,c.uid as p1_uid,d.uid as uid from gz_user_tuijian a left join gz_user_tuijian b on a.uid = b.parent_uid left join gz_user_tuijian c on b.uid = c.parent_uid left join gz_user_tuijian d on c.uid = d.parent_uid where a.uid={$iUserId} and b.uid is not null and c.uid is not null and d.uid is not null";
+        $sql .=" ORDER BY  `d.addtime` DESC LIMIT $start,$list";
         $teamlist = $this->App->find($sql);   
         if(!empty($teamlist)){
             foreach($teamlist as $k=>$row){
