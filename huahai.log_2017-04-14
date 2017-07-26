@@ -1,0 +1,4 @@
+time: 2017-04-14 10:33:52|update is sucess:| update sql:update `gz_user_tuijian_fx` set p2_uid = 94, p3_uid=0 where id in ()
+time: 2017-04-14 10:33:52|update is sucess2:| update sql:update `gz_user_tuijian_fx` set p3_uid=94 where id in ()
+time: 2017-04-14 16:25:38|/wwwroot/custom_fenxiao/m/app/shopping/controller.php|2|uid:7073| 1 level | money:10.8|ticheng:0.36|rank:12|parent_id:6999
+time: 2017-04-14 16:25:38|/wwwroot/custom_fenxiao/m/app/shopping/controller.php|2|uid:7073| 2 level | money:7.2|ticheng:0.24|rank:12|parent_id:94

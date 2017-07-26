@@ -1,0 +1,2 @@
+<?php $rt=array('appid'=>'wxf99acb3a5e4ba0ef','appsecret'=>'a9f7ca260232115fbb158ee51a4780ef','is_oauth'=>'1','winxintype'=>'3','jsapi_ticket'=>'HoagFKDcsGMVCIY2vOjf9q5-lU9TK8wyyD_iwyR4zJJa-LxhpvS_w09ySYKuJHP-JGHoSMeU0jBxWgXqCdHYMg');
+$__md5="288c6fd616ea42f715d4a47e59961a00";?>

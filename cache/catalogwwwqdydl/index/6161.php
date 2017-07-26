@@ -24,9 +24,9 @@
     array (
       'id' => '594',
       'parent_id' => '0',
-      'name' => '水产品',
+      'name' => '即食海参',
       'is_show' => '1',
-      'cat_title' => '水产品',
+      'cat_title' => '即食海参',
       'keywords' => NULL,
       'url' => 'catalog',
       'cat_id' => 
@@ -53,9 +53,9 @@
     array (
       'id' => '594',
       'parent_id' => '0',
-      'name' => '水产品',
+      'name' => '即食海参',
       'is_show' => '1',
-      'cat_title' => '水产品',
+      'cat_title' => '即食海参',
       'keywords' => NULL,
       'url' => 'catalog',
       'cat_id' => 
@@ -67,19 +67,27 @@
   array (
     0 => 
     array (
-      'brand_name' => '即食海参',
-      'brand_id' => '55',
+      'brand_name' => '悦海湾',
+      'brand_id' => '58',
       'brand_banner' => '',
       'brand_logo' => '',
-      'url' => 'brand.php?bid=55',
+      'url' => 'brand.php?bid=58',
     ),
     1 => 
     array (
-      'brand_name' => '干海参',
-      'brand_id' => '57',
+      'brand_name' => '壹海里',
+      'brand_id' => '59',
       'brand_banner' => '',
       'brand_logo' => '',
-      'url' => 'brand.php?bid=57',
+      'url' => 'brand.php?bid=59',
+    ),
+    2 => 
+    array (
+      'brand_name' => '华海众参',
+      'brand_id' => '60',
+      'brand_banner' => '',
+      'brand_logo' => '',
+      'url' => 'brand.php?bid=60',
     ),
   ),
   'attr' => 

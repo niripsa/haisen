@@ -529,6 +529,7 @@ class CommonController extends Controller
     // 自动登陆
     function user_auto_login() 
     {
+    	$this->Session->write('User.uid','');
         $rt = $this->_get_appid_appsecret();
         if ( is_weixin() == false || $rt['is_oauth'] == '0' ) {
             return;
@@ -556,7 +557,6 @@ class CommonController extends Controller
         {
             $wecha_id = isset($_COOKIE[CFGH.'USER']['UKEY']) ? $_COOKIE[CFGH.'USER']['UKEY'] : '';
         }
-
         $appid     = $rt['appid'];
         $appsecret = $rt['appsecret'];        
         $codetime  = $this->Session->read('User.codetime');
@@ -594,7 +594,7 @@ class CommonController extends Controller
                 $json = json_decode( $con );
                 if ( empty( $access_token ) ) { $access_token = $json->access_token; }
                 
-                $wecha_id = $json->openid;                
+                $wecha_id = $json->openid;             
                 $refresh_token = $json->refresh_token; // 获取 refresh_token
 
                 if ( ! empty( $access_token ) ) {
@@ -682,8 +682,7 @@ class CommonController extends Controller
                 die( '非法错误：获取code码为空，麻烦联系网站管理员解决，谢谢！' );
             }
         }
-        
-        $uid = $this->Session->read('User.uid');        
+        $uid = $this->Session->read('User.uid');   
         if ( empty( $wecha_id ) ) {
             $wecha_id = isset($_COOKIE[CFGH.'USER']['UKEY']) ? $_COOKIE[CFGH.'USER']['UKEY'] : '';
             if ( empty( $wecha_id ) ) {

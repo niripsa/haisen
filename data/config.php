@@ -1,11 +1,11 @@
 <?php
 $db_host   = "127.0.0.1";
 // database name
-$db_name   = "fenxiao";
+$db_name   = "qdydl_fenxiao";
 // database username
-$db_user   = "fenxiao";
+$db_user   = "qdydl";
 // database password
-$db_pass   = "0900-0sdafjouioijjk"; 
+$db_pass   = "0900-0sdafjouioijjb"; 
 
 $prefix    = "gz_";
 

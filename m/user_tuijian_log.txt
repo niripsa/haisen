@@ -1302,3 +1302,451 @@ array (
   'url' => 'http://www.huahaizhongshen.cn/m/user.php?act=company_qrcode&tid=3154',
   'addtime' => 1485218288,
 )
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 7348,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1492955145,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 7349,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493015254,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 7350,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493015327,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 1,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/?_t_t_t=0.5777037958002949',
+  'addtime' => 1493105938,
+)
+array (
+  'share_uid' => 7350,
+  'parent_uid' => 7350,
+  'uid' => 2,
+  'daili_uid' => 7350,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=7350',
+  'addtime' => 1493117472,
+)
+array (
+  'share_uid' => 1,
+  'parent_uid' => 1,
+  'uid' => 3,
+  'daili_uid' => 1,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=1',
+  'addtime' => 1493126481,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 4,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493178319,
+)
+array (
+  'share_uid' => 1,
+  'parent_uid' => 1,
+  'uid' => 5,
+  'daili_uid' => 1,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=1',
+  'addtime' => 1493178334,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 6,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493178337,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 7,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493181128,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 8,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493184220,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 9,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493187964,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 10,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493188216,
+)
+array (
+  'share_uid' => 1,
+  'parent_uid' => 1,
+  'uid' => 11,
+  'daili_uid' => 1,
+  'url' => 'http://www.qdydl.net/m/?tid=1',
+  'addtime' => 1493188512,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 12,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493188602,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 13,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493188649,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 14,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493190278,
+)
+array (
+  'share_uid' => 7350,
+  'parent_uid' => 7350,
+  'uid' => 15,
+  'daili_uid' => 7350,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=7350',
+  'addtime' => 1493250114,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 16,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493260674,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 17,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493260699,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 18,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493260726,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 19,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493260726,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 20,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493261508,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 21,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493261637,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 22,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493261645,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 23,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493261710,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 24,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493261821,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 25,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493268965,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 26,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493287920,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 27,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493288496,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 28,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/user.php?act=myerweima&from=timeline&isappinstalled=0',
+  'addtime' => 1493311797,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 29,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493350074,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 30,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493386215,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 31,
+  'daili_uid' => 0,
+  'url' => 'http://www.qdydl.net/m/',
+  'addtime' => 1493932661,
+)
+array (
+  'share_uid' => 4469,
+  'parent_uid' => 4469,
+  'uid' => 32,
+  'daili_uid' => 4469,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=4469',
+  'addtime' => 1494148526,
+)
+array (
+  'share_uid' => 4469,
+  'parent_uid' => 4469,
+  'uid' => 33,
+  'daili_uid' => 4469,
+  'url' => 'http://www.qdydl.net/m/user.php?act=company_qrcode&tid=4469',
+  'addtime' => 1494249823,
+)
+array (
+  'share_uid' => 10,
+  'parent_uid' => 10,
+  'uid' => 34,
+  'daili_uid' => 10,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=10',
+  'addtime' => 1495767569,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 35,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/',
+  'addtime' => 1495936689,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 36,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/?_t_t_t=0.1656172715725729',
+  'addtime' => 1497140465,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 37,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/',
+  'addtime' => 1499609528,
+)
+array (
+  'share_uid' => 12,
+  'parent_uid' => 12,
+  'uid' => 38,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=12',
+  'addtime' => 1499648733,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 39,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1499670667,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 40,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/catalog.php?act=store_list&flag=4&longitude=120.44239&latitude=36.391468&from=groupmessage',
+  'addtime' => 1499753194,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 41,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/catalog.php?act=store_list&flag=4&longitude=120.44239&latitude=36.391468&from=groupmessage&isappinstalled=0',
+  'addtime' => 1499753812,
+)
+array (
+  'share_uid' => 0,
+  'parent_uid' => 0,
+  'uid' => 42,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/catalog.php?act=store_list&flag=4&longitude=120.44239&latitude=36.391468&from=groupmessage&isappinstalled=0',
+  'addtime' => 1499754957,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 43,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/?tid=38&from=singlemessage',
+  'addtime' => 1499782015,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 44,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500001402,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 45,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500022900,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 46,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500022998,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 47,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500023076,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 48,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500024049,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 49,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500878474,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 50,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500878693,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 51,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500879560,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 52,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500882435,
+)
+array (
+  'share_uid' => 38,
+  'parent_uid' => 38,
+  'uid' => 53,
+  'daili_uid' => 0,
+  'url' => 'http://www.lanhaiyuye.com/m/user.php?act=company_qrcode&tid=38',
+  'addtime' => 1500884043,
+)

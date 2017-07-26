@@ -1,2 +1,2 @@
-<?php $rt='';
-$__md5="3624595a626b307b21db507f69cee0cf";?>
+<?php $rt=array('rank'=>'12');
+$__md5="2b725e4954f5588cecdd10af5cd53860";?>

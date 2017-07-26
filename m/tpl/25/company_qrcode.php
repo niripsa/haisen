@@ -18,7 +18,7 @@
 </script>
 <div id="main" style="min-height:300px">
     <div style="margin:10%; margin-bottom:0px; background:#FFF; padding:10%; text-align:center">
-        <img src="<?php echo '../images/qrcode.jpg'; ?>" style=" width:100%;max-width:100%; cursor:pointer" />
+        <img src="<?php echo '../images/qrcode111.jpg'; ?>" style=" width:100%;max-width:100%; cursor:pointer" />
     </div>
     <div style="margin:10%; margin-top:0px; background:#4c4343;text-align:center; height:45px; line-height:45px; font-size:14px; font-weight:bold; color:#FFF;-webkit-box-shadow: 0px 4px 4px #abaaaa; margin-bottom:5px;">
         长按关注公众帐号，更多海参大礼等你来！

@@ -1,2 +1,2 @@
-<?php $rt=array('appid'=>'wx3546e50a250490e3','appsecret'=>'15691e769b1815d94c9c491762539074','is_oauth'=>'1','winxintype'=>'3','jsapi_ticket'=>'kgt8ON7yVITDhtdwci0qeQcQnZ-nvgi7wBHE0Rc9uFwe80CQAUpta-adAqU0Bdc7nVmbnsWIz09n7WxG5n58sA');
+<?php $rt=array('appid'=>'wxf99acb3a5e4ba0ef','appsecret'=>'a9f7ca260232115fbb158ee51a4780ef','is_oauth'=>'1','winxintype'=>'3','jsapi_ticket'=>'HoagFKDcsGMVCIY2vOjf9q5-lU9TK8wyyD_iwyR4zJL5nCl9zNpNPTgwwGgCGbTH0fGGdQBt4wqj6dflV3jAEA');
 $__md5="f304e7dd694d68df760b751c31e5126f";?>

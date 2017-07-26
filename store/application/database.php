@@ -15,11 +15,11 @@ return [
     // 服务器地址
     'hostname'       => '127.0.0.1',
     // 数据库名
-    'database'       => 'fenxiao',
+    'database'       => 'qdydl_fenxiao',
     // 用户名
-    'username'       => 'fenxiao',
+    'username'       => 'qdydl',
     // 密码
-    'password'       => '0900-0sdafjouioijjk',
+    'password'       => '0900-0sdafjouioijjb',
     // 端口
     'hostport'       => '3306',
     // 连接dsn

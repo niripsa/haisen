@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta content="width=device-width,user-scalable=no,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="keywords" content="华海众参">
-<meta name="description" content="华海众参!">
-<title>华海众参</title>
+<meta name="keywords" content="蓝海海洋渔业">
+<meta name="description" content="蓝海海洋渔业!">
+<title>蓝海海洋渔业</title>
 <?php $style_url = ADMIN_URL . 'tpl/25/201608style'; ?>
 <link type="text/css" rel="stylesheet" href="<?php echo ADMIN_URL; ?>tpl/25/css.css?v=4" media="all" />
 <link rel="stylesheet" href="<?php echo $style_url; ?>/css/style_v1013.css?v=1.27" />
@@ -21,7 +21,7 @@
   <div class="back"></div>
     <h1>
       <a href="" class="logo">
-      <img src="<?php echo $style_url; ?>/img/8525.png?v=1.27" alt="华海众参!" title="华海众参!" />
+      <img src="<?php echo $style_url; ?>/img/8525.png?v=1.27" alt="蓝海海洋渔业!" title="蓝海海洋渔业!" />
       </a>
     </h1>
     <!-- <div class="search">
@@ -45,11 +45,11 @@
 <div id="slideBox" class="slideBox">
     <div class="bd">
         <ul>
-            <li><a href="#" title="华海众参"><img src="<?php echo $style_url; ?>/img/11.jpg"  alt="华海众参" /></a></li>
-            <li><a href="#" title="E华海众参"><img src="<?php echo $style_url; ?>/img/12.jpg"  alt="E华海众参" /></a></li>
-            <li><a href="#" title="华海众参"><img src="<?php echo $style_url; ?>/img/13.jpg"  alt="华海众参" /></a></li>
-            <li><a href="#" title="华海众参"><img src="<?php echo $style_url; ?>/img/11.jpg"  alt="华海众参" /></a></li>
-            <li><a href="#" title="华海众参"><img src="<?php echo $style_url; ?>/img/12.jpg"  alt="华海众参" /></a></li>
+            <li><a href="#" title="蓝海海洋渔业"><img src="<?php echo $style_url; ?>/img/11.jpg"  alt="蓝海海洋渔业" /></a></li>
+            <li><a href="#" title="蓝海海洋渔业"><img src="<?php echo $style_url; ?>/img/12.jpg"  alt="蓝海海洋渔业" /></a></li>
+            <li><a href="#" title="蓝海海洋渔业"><img src="<?php echo $style_url; ?>/img/13.jpg"  alt="蓝海海洋渔业" /></a></li>
+            <li><a href="#" title="蓝海海洋渔业"><img src="<?php echo $style_url; ?>/img/11.jpg"  alt="蓝海海洋渔业" /></a></li>
+            <li><a href="#" title="蓝海海洋渔业"><img src="<?php echo $style_url; ?>/img/12.jpg"  alt="蓝海海洋渔业" /></a></li>
         </ul>
     </div>
     <div class="hd">
@@ -117,8 +117,8 @@
     <ul>
     <?php foreach ( (array)$goods_info['groupbuy'] as $k => $v ) { ?>
       <li>
-        <a href="<?php echo ADMIN_URL . '/group_product.php?id=' . $v['group_id']; ?>" title="华海众参">
-          <img src="<?php echo SITE_URL . $v['goods_img']; ?>"  alt="华海众参" />
+        <a href="<?php echo ADMIN_URL . '/group_product.php?id=' . $v['group_id']; ?>" title="蓝海海洋渔业">
+          <img src="<?php echo SITE_URL . $v['goods_img']; ?>"  alt="蓝海海洋渔业" />
           <span> <?php echo $v['group_name']; ?> </span>
         </a>
         <i> ￥<?php echo $v['price']; ?> </i>
@@ -173,7 +173,7 @@
         <li> 
           <div class="pro-img"> 
             <a href="<?php echo ADMIN_URL . 'product.php?id=' . $v['goods_id']; ?>"> 
-               <img src="<?php echo SITE_URL . $v['goods_img']; ?>"  alt="华海众参">
+               <img src="<?php echo SITE_URL . $v['goods_img']; ?>"  alt="蓝海海洋渔业">
             </a>
           </div>
           <span> <?php echo $v['group_name']; ?> </span><b>￥<?php echo $v['price']; ?></b>
